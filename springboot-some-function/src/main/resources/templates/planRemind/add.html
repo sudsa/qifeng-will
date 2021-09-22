@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head th:include="include :: header"></head>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content ">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content">
+						<form class="form-horizontal m-t" id="signupForm">
+							<div class="form-group">
+								<label class="col-sm-2 control-label">主题：<i style="color: red;">*</i></label>
+								<div class="col-sm-4">
+									<input id="topic" name="topic" class="form-control" type="text">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-2 control-label">内容：<i style="color: red;">*</i></label>
+								<div class="col-sm-10">
+									<textarea rows="4" class="form-control"  id="content" name="content"></textarea>
+								</div>
+							</div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">提醒形式：<i style="color: red;">*</i></label>
+                                <div class="col-sm-4">
+                                    <select id="remindType" name="remindType" data-placeholder="选择类别"
+                                            class="col-sm-4 form-control chosen-select"
+                                            tabindex="2">
+                                        <option value="0">邮件</option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-2 control-label">提醒值：<i style="color: red;">*</i></label>
+                                <div class="col-sm-4">
+                                    <input id="remindValue" name="remindValue" class="form-control" type="text">
+                                </div>
+                            </div>
+
+
+							<div class="form-group">
+								<label class="col-sm-2 control-label">执行状态：<i style="color: red;">*</i></label>
+								<div class="col-sm-4">
+									<select id="executeStatus" name="executeStatus" data-placeholder="选择类别"
+											class="col-sm-4 form-control chosen-select"
+											tabindex="2">
+										<option value="1">启动</option>
+										<option value="0">停止</option>
+									</select>
+								</div>
+								<label class="col-sm-2 control-label">计划类型：<i style="color: red;">*</i></label>
+								<div class="col-sm-4">
+									<select id="planType" name="planType" data-placeholder="选择类别"
+											class="col-sm-4 form-control chosen-select" onchange="selectPlan()"
+											tabindex="2">
+										<option value="0">单次执行</option>
+										<option value="1">每日执行</option>
+										<option value="2">周期执行</option>
+										<option value="3">星期执行</option>
+										<option value="4">周期星期执行</option>
+									</select>
+								</div>
+								<br>
+								<h4 class="page-header" style="color:red;"></h4>
+							</div>
+
+							<div id="cycleDateFlag" style="display: none">
+								<div class="form-group">
+									<label class="col-sm-2 control-label">开始日期：</label>
+									<div class="col-sm-4">
+										<input id="startDate" name="startDate" class="form-control"
+											   onFocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true})" type="text">
+									</div>
+									<label class="col-sm-2 control-label">结束日期：</label>
+									<div class="col-sm-4">
+										<input id="endDate" name="endDate" class="form-control"
+											   onFocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true})" type="text">
+									</div>
+								</div>
+							</div>
+
+
+                            <div id="executeDateFlag" style="display: none">
+								<div class="form-group">
+									<label class="col-sm-2 control-label">执行日期：</label>
+									<div class="col-sm-4">
+										<input id="executeDate" name="executeDate" class="form-control"
+											   onFocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true})" type="text">
+									</div>
+								</div>
+							</div>
+
+							<div id="executeTimeFlag" style="display: none">
+								<div class="form-group">
+									<label class="col-sm-2 control-label">执行时间：</label>
+									<div class="col-sm-4">
+										<input id="executeTime" name="executeTime" class="form-control"
+											   onFocus="WdatePicker({dateFmt:'HH:mm:ss',readOnly:true})" type="text">
+									</div>
+								</div>
+							</div>
+
+							<div id="cycleNumberFlag" style="display: none">
+								<div class="form-group">
+									<label class="col-sm-2 control-label">周期个数：</label>
+									<div class="col-sm-4">
+										<input id="cycleNumber" name="cycleNumber" class="form-control" type="number">
+									</div>
+									<label class="col-sm-2 control-label">周期单位：</label>
+									<div class="col-sm-4">
+										<select id="cycleUnit" name="cycleUnit" data-placeholder="选择类别"
+												class="col-sm-4 form-control chosen-select" onchange="selectPlan()"
+												tabindex="2">
+											<!--<option value="0">秒</option>-->
+											<option value="1">分</option>
+											<option value="2">时</option>
+											<option value="3">天</option>
+											<option value="4">月</option>
+											<option value="5">年</option>
+										</select>
+									</div>
+								</div>
+							</div>
+
+							<div id="weekFlag" style="display: none">
+								<div class="form-group">
+									<label class="col-sm-2 control-label"> 周一：</label>
+									<div class="col-sm-4">
+										<label class="col-sm-2 control-label"><input name="mondayFlag" type="radio"
+																					 value="1" checked >是</label>
+										<label class="col-sm-2 control-label"><input name="mondayFlag" type="radio"
+																					 value="0">否</label>
+									</div>
+
+
+									<label class="col-sm-2 control-label"> 周二：</label>
+									<div class="col-sm-4">
+										<label class="col-sm-2 control-label"><input name="tuesdayFlag" type="radio"
+																					 value="2" checked >是</label>
+										<label class="col-sm-2 control-label"><input name="tuesdayFlag" type="radio"
+																					 value="0">否</label>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-sm-2 control-label"> 周三：</label>
+									<div class="col-sm-4">
+										<label class="col-sm-2 control-label"><input name="wednesdayFlag" type="radio"
+																					 value="3" checked >是</label>
+										<label class="col-sm-2 control-label"><input name="wednesdayFlag" type="radio"
+																					 value="0">否</label>
+									</div>
+									<label class="col-sm-2 control-label"> 周四：</label>
+
+									<div class="col-sm-4">
+										<label class="col-sm-2 control-label"><input name="thursdayFlag" type="radio"
+																					 value="4" checked >是</label>
+										<label class="col-sm-2 control-label"><input name="thursdayFlag" type="radio"
+																					 value="0">否</label>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-sm-2 control-label"> 周五：</label>
+									<div class="col-sm-4">
+										<label class="col-sm-2 control-label"><input name="fridayFlag" type="radio"
+																					 value="5" checked >是</label>
+										<label class="col-sm-2 control-label"><input name="fridayFlag" type="radio"
+																					 value="0">否</label>
+									</div>
+									<label class="col-sm-2 control-label"> 周六：</label>
+									<div class="col-sm-4">
+										<label class="col-sm-2 control-label"><input name="saturdayFlag" type="radio"
+																					 value="6" checked >是</label>
+										<label class="col-sm-2 control-label"><input name="saturdayFlag" type="radio"
+																					 value="0">否</label>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-sm-2 control-label"> 周日：</label>
+									<div class="col-sm-4">
+										<label class="col-sm-2 control-label"><input name="sundayFlag" type="radio"
+																					 value="7" checked >是</label>
+										<label class="col-sm-2 control-label"><input name="sundayFlag" type="radio"
+																					 value="0">否</label>
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-sm-12 col-sm-offset-6">
+									<button type="submit" class="btn btn-primary">提交</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+	</div>
+	</div>
+	<div th:include="include::footer"></div>
+	<script type="text/javascript" src="/js/plugins/My97DatePicker/WdatePicker.js"></script>
+	<script type="text/javascript" src="/js/appjs/planRemind/add.js">
+	</script>
+</body>
+</html>
+

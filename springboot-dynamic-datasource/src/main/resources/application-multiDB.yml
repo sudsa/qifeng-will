@@ -1,0 +1,125 @@
+###手动配置多数据源###
+#master
+datasource:
+  master:
+    type: com.alibaba.druid.pool.xa.DruidXADataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://${MYSQL_HOST:127.0.0.1}:${MYSQL_PORT:3306}/${DATABASE_NAME:sys}?useSSL=false&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
+    username: ${MYSQL_USER:root}
+    password: ${MYSQL_PASS:root}
+    initialSize: ${global.druid.initial-size}
+    minIdle: ${global.druid.minIdle}
+    maxActive: ${global.druid.maxActive}
+    # 配置获取连接等待超时的时间
+    maxWait: ${global.druid.maxWait}
+    # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+    timeBetweenEvictionRunsMillis: ${global.druid.timeBetweenEvictionRunsMillis}
+    # 配置一个连接在池中最小生存的时间，单位是毫秒
+    minEvictableIdleTimeMillis: ${global.druid.minEvictableIdleTimeMillis}
+    validationQuery: ${global.druid.validationQuery}
+    testWhileIdle: ${global.druid.testWhileIdle}
+    testOnBorrow: ${global.druid.testOnBorrow}
+    testOnReturn: ${global.druid.testOnReturn}
+    # 打开PSCache，并且指定每个连接上PSCache的大小
+    poolPreparedStatements: ${global.druid.poolPreparedStatements}
+    maxPoolPreparedStatementPerConnectionSize: ${global.druid.maxPoolPreparedStatementPerConnectionSize}
+    # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+    filters: ${global.druid.filters}
+    # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+    connectionProperties: ${global.druid.connectionProperties}
+    # 合并多个DruidDataSource的监控数据
+    #useGlobalDataSourceStat: ${global.druid.useGlobalDataSourceStat}
+  #slave1
+  slave1:
+    type: com.alibaba.druid.pool.xa.DruidXADataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://${SLAVE1_MYSQL_HOST:101.200.149.141}:${SLAVE1_MYSQL_PORT:3306}/${SLAVE1_DATABASE_NAME:acc}?useSSL=false&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
+    username: ${SLAVE1_MYSQL_USER:root}
+    password: ${SLAVE1_MYSQL_PASS:root}
+    initialSize: ${global.druid.initial-size}
+    minIdle: ${global.druid.minIdle}
+    maxActive: ${global.druid.maxActive}
+    maxWait: ${global.druid.maxWait}
+    timeBetweenEvictionRunsMillis: ${global.druid.timeBetweenEvictionRunsMillis}
+    minEvictableIdleTimeMillis: ${global.druid.minEvictableIdleTimeMillis}
+    validationQuery: ${global.druid.validationQuery}
+    testWhileIdle: ${global.druid.testWhileIdle}
+    testOnBorrow: ${global.druid.testOnBorrow}
+    testOnReturn: ${global.druid.testOnReturn}
+    poolPreparedStatements: ${global.druid.poolPreparedStatements}
+    maxPoolPreparedStatementPerConnectionSize: ${global.druid.maxPoolPreparedStatementPerConnectionSize}
+    filters: ${global.druid.filters}
+    connectionProperties: ${global.druid.connectionProperties}
+    #useGlobalDataSourceStat: ${global.druid.useGlobalDataSourceStat}
+
+  #slave2
+  slave2:
+    type: com.alibaba.druid.pool.xa.DruidXADataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://${SLAVE2_MYSQL_HOST:127.0.0.1}:${SLAVE2_MYSQL_PORT:3306}/${SLAVE2_DATABASE_NAME:sys}?useSSL=false&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&allowMultiQueries=true
+    username: ${SLAVE2_MYSQL_USER:root}
+    password: ${SLAVE2_MYSQL_PASS:root}
+    initialSize: ${global.druid.initial-size}
+    minIdle: ${global.druid.minIdle}
+    maxActive: ${global.druid.maxActive}
+    maxWait: ${global.druid.maxWait}
+    timeBetweenEvictionRunsMillis: ${global.druid.timeBetweenEvictionRunsMillis}
+    minEvictableIdleTimeMillis: ${global.druid.minEvictableIdleTimeMillis}
+    validationQuery: ${global.druid.validationQuery}
+    testWhileIdle: ${global.druid.testWhileIdle}
+    testOnBorrow: ${global.druid.testOnBorrow}
+    testOnReturn: ${global.druid.testOnReturn}
+    poolPreparedStatements: ${global.druid.poolPreparedStatements}
+    maxPoolPreparedStatementPerConnectionSize: ${global.druid.maxPoolPreparedStatementPerConnectionSize}
+    filters: ${global.druid.filters}
+    connectionProperties: ${global.druid.connectionProperties}
+    #useGlobalDataSourceStat: ${global.druid.useGlobalDataSourceStat}
+  #other
+  other:
+    type: com.alibaba.druid.pool.xa.DruidXADataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://${OTHER_MYSQL_HOST:127.0.0.1}:${OTHER_MYSQL_PORT:3306}/${OTHER_DATABASE_NAME:sys}?useSSL=false&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&allowMultiQueries=true
+    username: ${OTHER_MYSQL_USER:root}
+    password: ${OTHER_MYSQL_PASS:root}
+    initialSize: ${global.druid.initial-size}
+    minIdle: ${global.druid.minIdle}
+    maxActive: ${global.druid.maxActive}
+    maxWait: ${global.druid.maxWait}
+    timeBetweenEvictionRunsMillis: ${global.druid.timeBetweenEvictionRunsMillis}
+    minEvictableIdleTimeMillis: ${global.druid.minEvictableIdleTimeMillis}
+    validationQuery: ${global.druid.validationQuery}
+    testWhileIdle: ${global.druid.testWhileIdle}
+    testOnBorrow: ${global.druid.testOnBorrow}
+    testOnReturn: ${global.druid.testOnReturn}
+    poolPreparedStatements: ${global.druid.poolPreparedStatements}
+    maxPoolPreparedStatementPerConnectionSize: ${global.druid.maxPoolPreparedStatementPerConnectionSize}
+    filters: ${global.druid.filters}
+    connectionProperties: ${global.druid.connectionProperties}
+    #useGlobalDataSourceStat: ${global.druid.useGlobalDataSourceStat}
+
+
+###公共druid配置数据###
+global.druid:
+  initialSize: 1
+  minIdle: 3
+  maxActive: 20
+  # 配置获取连接等待超时的时间
+  maxWait: 60000
+  # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+  timeBetweenEvictionRunsMillis: 60000
+  # 配置一个连接在池中最小生存的时间，单位是毫秒
+  minEvictableIdleTimeMillis: 30000
+  validationQuery: select 'x'
+  testWhileIdle: true
+  testOnBorrow: false
+  testOnReturn: false
+  # 打开PSCache，并且指定每个连接上PSCache的大小
+  poolPreparedStatements: true
+  maxPoolPreparedStatementPerConnectionSize: 20
+  # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+  filters: stat,wall,slf4j
+  # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+  connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+  # 合并多个DruidDataSource的监控数据
+  useGlobalDataSourceStat: true
+

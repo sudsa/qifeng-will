@@ -1,0 +1,23 @@
+server:
+  session-timeout: 1800
+  port: 8007
+
+spring:
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  profiles:
+    active: ${ENV:dev,activemq}
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: mybatis/**/*Mapper.xml
+  typeAliasesPackage: com.hanxiaozhang.**.domain
+#配置打印日志
+logging:
+  level:
+    #root日志输出级别
+    root: info
+    #应用的包下日志输出输出级别
+    com.hanxiaozhang: debug
+

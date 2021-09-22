@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head th:include="include :: header">
+</head>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content ">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<label class="col-sm-2 control-label">上传文件例子</label>
+					<input type="hidden" id="fileIds" name="fileIds">
+					<div class="ibox-content">
+						<div class="columns pull-left">
+							<button type="button" class="layui-btn" id="uploadFile">
+								<i class="fa fa-cloud"></i>上传文件1
+							</button>
+							<button  type="button" class="btn  btn-primary"
+									 onclick="uploadFilePage('A','fileTable')">
+								<i class="fa fa-primary" aria-hidden="true"></i>上传文件2
+							</button>
+						</div>
+						<div class="columns pull-right">
+							<button class="btn btn-success" onclick="downloadZip1('1','A','')">一键打包下载1</button>
+							<button class="btn btn-success" onclick="downloadZip2()">一键打包下载2</button>
+						</div>
+						<table class="table  table-bordered" id="fileTable"></table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div th:include="include :: footer"></div>
+	<script type="text/javascript" src="/js/appjs/common/file/file.js"></script>
+	<link href="/css/layui.css" rel="stylesheet">
+	<script src="/js/layui.js"></script>
+</body>
+</html>

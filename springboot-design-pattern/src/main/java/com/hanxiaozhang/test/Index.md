@@ -1,0 +1,2 @@
+TestInterface 与 TestImpl ：证明接口中default关键字的用法，
+最主要的是使用default关键字后接口不用实现该方法

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hanxiaozhang.common.dao.FileDao">
+
+	<select id="get" resultType="com.hanxiaozhang.common.domain.FileDO">
+		select `id`,`file_name`,`file_ext`,`file_full`,`url`,`server_path`,`group_path`,`belong_id`,`type`,`file_tag`,`create_by`,`create_time`,`update_by`,`update_time`,`remark`,`del_flag` from sys_file where id = #{value}
+	</select>
+
+	<select id="list" resultType="com.hanxiaozhang.common.dto.FileDTO">
+		f.*,
+		d.description AS typeName,
+		d.`name` AS fileTagName
+		from sys_file f
+		LEFT JOIN sys_dict d ON f.type =d.type AND f.file_tag =d.`value`
+        <where>
+			f.del_flag=0
+			<if test="fileName != null and fileName != ''"> and f.file_name = #{fileName} </if>
+			<if test="fileExt != null and fileExt != ''"> and f.file_ext = #{fileExt} </if>
+			<if test="fileFull != null and fileFull != ''"> and f.file_full = #{fileFull} </if>
+			<if test="url != null and url != ''"> and f.url = #{url} </if>
+			<if test="serverPath != null and serverPath != ''"> and f.server_path = #{serverPath} </if>
+			<if test="groupPath != null and groupPath != ''"> and f.group_path = #{groupPath} </if>
+			<if test="belongId != null and belongId != ''"> and f.belong_id = #{belongId} </if>
+			<if test="type != null and type != ''"> and f.type = #{type} </if>
+			<if test="fileTag != null and fileTag != ''"> and f.file_tag = #{fileTag} </if>
+			<if test="remark != null and remark != ''"> and f.remark = #{remark} </if>
+		</where>
+        <choose>
+            <when test="sort != null and sort.trim() != ''">
+                order by ${sort} ${order}
+            </when>
+			<otherwise>
+                order by f.id desc
+			</otherwise>
+        </choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+	
+ 	<select id="count" resultType="int">
+		select count(*) from sys_file
+		 <where>  
+		  		  <if test="id != null and id != ''"> and id = #{id} </if>
+		  		  <if test="fileName != null and fileName != ''"> and file_name = #{fileName} </if>
+		  		  <if test="fileExt != null and fileExt != ''"> and file_ext = #{fileExt} </if>
+		  		  <if test="fileFull != null and fileFull != ''"> and file_full = #{fileFull} </if>
+		  		  <if test="url != null and url != ''"> and url = #{url} </if>
+		  		  <if test="serverPath != null and serverPath != ''"> and server_path = #{serverPath} </if>
+		  		  <if test="groupPath != null and groupPath != ''"> and group_path = #{groupPath} </if>
+		  		  <if test="belongId != null and belongId != ''"> and belong_id = #{belongId} </if>
+		  		  <if test="type != null and type != ''"> and type = #{type} </if>
+		  		  <if test="fileTag != null and fileTag != ''"> and file_tag = #{fileTag} </if>
+		  		  <if test="createBy != null and createBy != ''"> and create_by = #{createBy} </if>
+		  		  <if test="createTime != null and createTime != ''"> and create_time = #{createTime} </if>
+		  		  <if test="updateBy != null and updateBy != ''"> and update_by = #{updateBy} </if>
+		  		  <if test="updateTime != null and updateTime != ''"> and update_time = #{updateTime} </if>
+		  		  <if test="remark != null and remark != ''"> and remark = #{remark} </if>
+		  		  <if test="delFlag != null and delFlag != ''"> and del_flag = #{delFlag} </if>
+		  		</where>
+	</select>
+	 
+	<insert id="save" parameterType="com.hanxiaozhang.common.domain.FileDO"
+			useGeneratedKeys="true" keyProperty="id">
+		insert into sys_file
+		(
+			`file_name`,
+			`file_ext`, 
+			`file_full`, 
+			`url`, 
+			`server_path`, 
+			`group_path`, 
+			`belong_id`, 
+			`type`, 
+			`file_tag`, 
+			`create_by`, 
+			`create_time`, 
+			`update_by`, 
+			`update_time`, 
+			`remark`, 
+			`del_flag`
+		)
+		values
+		(
+			#{fileName},
+			#{fileExt}, 
+			#{fileFull}, 
+			#{url}, 
+			#{serverPath}, 
+			#{groupPath}, 
+			#{belongId}, 
+			#{type}, 
+			#{fileTag}, 
+			#{createBy}, 
+			#{createTime}, 
+			#{updateBy}, 
+			#{updateTime}, 
+			#{remark}, 
+			#{delFlag}
+		)
+	</insert>
+	 
+	<update id="update" parameterType="com.hanxiaozhang.common.dto.FileDTO">
+		update sys_file 
+		<set>
+			<if test="fileName != null">`file_name` = #{fileName}, </if>
+			<if test="fileExt != null">`file_ext` = #{fileExt}, </if>
+			<if test="fileFull != null">`file_full` = #{fileFull}, </if>
+			<if test="url != null">`url` = #{url}, </if>
+			<if test="serverPath != null">`server_path` = #{serverPath}, </if>
+			<if test="groupPath != null">`group_path` = #{groupPath}, </if>
+			<if test="belongId != null">`belong_id` = #{belongId}, </if>
+			<if test="type != null">`type` = #{type}, </if>
+			<if test="fileTag != null">`file_tag` = #{fileTag}, </if>
+			<if test="createBy != null">`create_by` = #{createBy}, </if>
+			<if test="createTime != null">`create_time` = #{createTime}, </if>
+			<if test="updateBy != null">`update_by` = #{updateBy}, </if>
+			<if test="updateTime != null">`update_time` = #{updateTime}, </if>
+			<if test="remark != null">`remark` = #{remark}, </if>
+			<if test="delFlag != null">`del_flag` = #{delFlag}</if>
+		</set>
+		where id = #{id}
+	</update>
+	
+	<delete id="remove">
+		delete from sys_file where id = #{value}
+	</delete>
+	
+	<delete id="batchRemove">
+		delete from sys_file where id in 
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+	<select id="listByBelongIdAndTypeAndFileTag" resultType="com.hanxiaozhang.common.dto.FileDTO">
+		SELECT
+		d.description AS typeName,
+		d.`type` AS type,
+		d.`value` AS file_tag,
+		d.`name` AS fileTagName,
+		UUID()  AS uuid,
+		f.`id`,f.`file_name`,f.`file_ext`,f.`file_full`,f.`url`,f.`server_path`,
+		f.`group_path`,f.`belong_id`,f.`create_time`,f.`update_time`,
+		f.`remark`,f.`del_flag`
+		FROM
+		sys_dict d
+		LEFT JOIN sys_file  f ON f.type =d.type AND f.file_tag =d.`value` AND f.del_flag=0 AND f.`belong_id`=#{belongId}
+		WHERE d.type =#{type}
+		<if test="fileTag != null and fileTag != ''">
+			AND f.`file_tag` = #{fileTag} </if>
+	</select>
+
+</mapper>

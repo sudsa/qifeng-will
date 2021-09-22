@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head th:include="include :: header"></head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content searchTable collapse in" id="searchTable">
+    <table class="table " border="0px " style="white-space:nowrap; overflow:hidden;width:80%;margin-bottom: -20px;">
+        <tr>
+            <td class="text-right">标签名</td>
+            <td><input type="text" id="name" name="name" class="form-control" placeholder="请输入标签名"></td>
+            <td class="text-right">数据值</td>
+            <td><input type="text" id="value" name="value" class="form-control" placeholder="请输入数据值"></td>
+            <td class="text-right">类型</td>
+            <td><input type="text" id="type" name="type" class="form-control" placeholder="请输入类型"></td>
+        </tr>
+
+    </table>
+</div>
+
+<div class="col-sm-12">
+    <div class="ibox">
+        <div class="ibox-body">
+            <div class="fixed-table-toolbar">
+                <div class="columns pull-left">
+                    <button class="btn  btn-primary" onclick="add()">
+                        <i class="fa fa-plus" aria-hidden="true"></i>添加
+                    </button>
+                    <button type="button" class="btn  btn-danger" onclick="batchRemove()">
+                        <i class="fa fa-trash" aria-hidden="true"></i>删除
+                    </button>
+                    <button class="btn  btn-primary" onclick="typing()">
+                        打字练习
+                    </button>
+                </div>
+                <div class="columns pull-right">
+                    <button class="btn btn-success" onclick="reLoad()">查询</button>
+                    <button class="btn btn-success" id="resetDictBtn">清空</button>
+                </div>
+            </div>
+            <table id="exampleTable" class="table table-bordered test" style="white-space:nowrap;">
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+<div th:include="include :: footer"></div>
+<script type="text/javascript" src="/js/appjs/common/dict/dict.js"></script>
+</body>
+</html>

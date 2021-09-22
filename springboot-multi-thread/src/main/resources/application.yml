@@ -1,0 +1,39 @@
+server:
+  session-timeout: 1800
+  port: 8000
+
+
+spring:
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  profiles:
+    active: ${ENV:dev}
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 200MB
+      max-request-size: 200MB
+
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: mybatis/**/*Mapper.xml
+  typeAliasesPackage: com.hanxiaozhang.**.domain
+#配置打印日志
+logging:
+  level:
+    #root日志输出级别
+    root: info
+    #应用的包下日志输出输出级别
+    com.hanxiaozhang: debug
+
+async:
+  executor:
+    core-pool-size: 10
+    max-pool-size: 10
+    queue-capacity: 100
+    await-termination-seconds: 60
+    wait-for-tasks-to-complete-on-shutdown: true
+    thread-name-prefix: AsyncExecutorThread-

@@ -1,0 +1,44 @@
+nacos:
+  server-addr: localhost:8849
+  #server-addr: http://10.128.4.170:88481
+  namespace: qifeng
+spring:
+  application:
+    name: webserver-dev-server
+  cloud:
+    gateway:
+      routes:
+      - id: time_route
+        uri: http://localhost:8089
+        predicates:
+        - Host=**.foo.org
+        - Path=/headers
+        - Method=GET
+        - Header=X-Request-Id, \d+
+        - Query=foo, ba
+        - Query=baz
+        - Cookie=chocolate
+        - Between=
+        - After=2018-01-12T06-06-06+08:00[Asia/Shanghai]
+        - Before=2018-01-12T06-06-06+08:00[Asia/Shanghai]
+
+
+    nacos:
+      config:
+        server-addr: ${nacos.server-addr}
+        file-extension: yml
+        namespace: ${nacos.namespace}
+        #shared-dataids: organization-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+      discovery:
+        server-addr: ${nacos.server-addr}
+        service: ${spring.application.name}
+        enabled: true
+        #namespace: ${nacos.namespace}
+        namespace: public
+
+
+domain: webserver-dev-server
+
+
+
+

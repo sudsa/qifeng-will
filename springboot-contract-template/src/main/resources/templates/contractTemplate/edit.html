@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head th:include="include :: header"></head>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content ">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content">
+						<form class="form-horizontal m-t" id="signupForm">
+						<input id="templateId" name="templateId" th:value="${contractTemplate.templateId}"  type="hidden">
+							<div class="form-group">	
+								<label class="col-sm-1 control-label">模板名称：</label>
+								<div class="col-sm-4">
+									<input id="templateName" name="templateName" th:value="${contractTemplate.templateName}" class="form-control" type="text">
+								</div>
+
+								<label class="col-sm-1 control-label">模板状态：</label>
+								<div class="col-sm-4">
+									<select data-placeholder="--请选择--" name="templateStatus" id="templateStatus"
+											class="form-control chosen-select" tabindex="2" required>
+										<option value="">--请选择--</option>
+										<option value="0" th:selected="${contractTemplate.templateStatus} eq 0">禁用</option>
+										<option value="1" th:selected="${contractTemplate.templateStatus} eq 1">使用</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-1 control-label">版本：</label>
+								<div class="col-sm-4">
+									<input id="version" name="version" th:value="${contractTemplate.version}" class="form-control" type="text">
+								</div>
+								<label class="col-sm-1 control-label">类型：</label>
+								<div class="col-sm-4">
+									<input id="type" name="type" th:value="${contractTemplate.type}" class="form-control" type="number">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-1 control-label">备注：</label>
+								<div class="col-sm-4">
+									<input id="remark" name="remark"  th:value="${contractTemplate.remark}"   class="form-control" type="text">
+								</div>
+							</div>
+
+
+
+							<div class="form-group">
+								<label class="col-sm-1 control-label">模板内容：</label>
+								<input id="templateContent" name="templateContent" th:value="${contractTemplate.templateContent}"  type="hidden">
+								<div class="col-sm-11">
+									<div class="ibox-content no-padding">
+										<div id="content_sn" class="summernote"></div>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="form-group">
+								<div class="col-sm-12 col-sm-offset-6">
+									<button type="submit" class="btn btn-primary">提交</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+	</div>
+	</div>
+	<div th:include="include::footer"></div>
+	<script type="text/javascript" src="/js/appjs/edit.js">
+	</script>
+</body>
+</html>

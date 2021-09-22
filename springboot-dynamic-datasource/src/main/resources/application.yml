@@ -1,0 +1,22 @@
+server:
+  session-timeout: 1800
+  port: 80
+
+spring:
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  profiles:
+    active: ${ENV:multiDB}
+  ##jta相关参数配置
+  jta:
+    log-dir: classpath:tx-logs
+    transaction-manager-id: txManager
+#配置打印日志
+logging:
+  level:
+    #root日志输出级别
+    root: info
+    #应用的包下日志输出输出级别
+    com.hanxiaozhang: debug
+

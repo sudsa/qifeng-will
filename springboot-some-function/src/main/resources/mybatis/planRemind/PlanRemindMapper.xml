@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hanxiaozhang.planRemind.dao.PlanRemindDao">
+
+    <select id="get" resultType="com.hanxiaozhang.planRemind.domain.PlanRemindDO">
+		select `id`,`plan_type`,`execute_status`,`topic`,`content`,`remind_type`,`remind_value`,`finish_flag`,`start_date`,`end_date`,`execute_date`,`execute_time`,`cycle_number`,`cycle_unit`,`recent_execute_date`,`monday_flag`,`tuesday_flag`,`wednesday_flag`,`thursday_flag`,`friday_flag`,`saturday_flag`,`sunday_flag`,`create_by`,`create_time`,`update_by`,`update_time`,`remark`,`del_flag` from sys_plan_remind where id = #{value}
+	</select>
+
+    <select id="list" resultType="com.hanxiaozhang.planRemind.domain.PlanRemindDO">
+        select `id`,`plan_type`,`execute_status`,`topic`,`content`,`remind_type`,`remind_value`,`finish_flag`,`start_date`,`end_date`,`execute_date`,`execute_time`,`cycle_number`,`cycle_unit`,`recent_execute_date`,`monday_flag`,`tuesday_flag`,`wednesday_flag`,`thursday_flag`,`friday_flag`,`saturday_flag`,`sunday_flag`,`create_by`,`create_time`,`update_by`,`update_time`,`remark`,`del_flag` from sys_plan_remind
+        <where>
+            <if test="id != null and id != ''"> and id = #{id} </if>
+            <if test="planType != null and planType != ''"> and plan_type = #{planType} </if>
+            <if test="executeStatus != null and executeStatus != ''"> and execute_status = #{executeStatus} </if>
+            <if test="topic != null and topic != ''"> and topic = #{topic} </if>
+            <if test="content != null and content != ''"> and content = #{content} </if>
+            <if test="remindType != null and remindType != ''"> and remind_type = #{remindType} </if>
+            <if test="remindValue != null and remindValue != ''"> and remind_value = #{remindValue} </if>
+            <if test="finishFlag != null and finishFlag != ''"> and finish_flag = #{finishFlag} </if>
+            <if test="startDate != null and startDate != ''"> and start_date = #{startDate} </if>
+            <if test="endDate != null and endDate != ''"> and end_date = #{endDate} </if>
+            <if test="executeDate != null and executeDate != ''"> and execute_date = #{executeDate} </if>
+            <if test="executeTime != null and executeTime != ''"> and execute_time = #{executeTime} </if>
+            <if test="cycleNumber != null and cycleNumber != ''"> and cycle_number = #{cycleNumber} </if>
+            <if test="cycleUnit != null and cycleUnit != ''"> and cycle_unit = #{cycleUnit} </if>
+            <if test="recentExecuteDate != null and recentExecuteDate != ''"> and recent_execute_date = #{recentExecuteDate} </if>
+            <if test="mondayFlag != null and mondayFlag != ''"> and monday_flag = #{mondayFlag} </if>
+            <if test="tuesdayFlag != null and tuesdayFlag != ''"> and tuesday_flag = #{tuesdayFlag} </if>
+            <if test="wednesdayFlag != null and wednesdayFlag != ''"> and wednesday_flag = #{wednesdayFlag} </if>
+            <if test="thursdayFlag != null and thursdayFlag != ''"> and thursday_flag = #{thursdayFlag} </if>
+            <if test="fridayFlag != null and fridayFlag != ''"> and friday_flag = #{fridayFlag} </if>
+            <if test="saturdayFlag != null and saturdayFlag != ''"> and saturday_flag = #{saturdayFlag} </if>
+            <if test="sundayFlag != null and sundayFlag != ''"> and sunday_flag = #{sundayFlag} </if>
+            <if test="createBy != null and createBy != ''"> and create_by = #{createBy} </if>
+            <if test="createTime != null and createTime != ''"> and create_time = #{createTime} </if>
+            <if test="updateBy != null and updateBy != ''"> and update_by = #{updateBy} </if>
+            <if test="updateTime != null and updateTime != ''"> and update_time = #{updateTime} </if>
+            <if test="remark != null and remark != ''"> and remark = #{remark} </if>
+            <if test="delFlag != null and delFlag != ''"> and del_flag = #{delFlag} </if>
+        </where>
+        <choose>
+            <when test="sort != null and sort.trim() != ''">
+                order by ${sort} ${order}
+            </when>
+            <otherwise>
+                order by id desc
+            </otherwise>
+        </choose>
+        <if test="offset != null and limit != null">
+            limit #{offset}, #{limit}
+        </if>
+    </select>
+
+    <select id="count" resultType="int">
+        select count(*) from sys_plan_remind
+        <where>
+            <if test="id != null and id != ''"> and id = #{id} </if>
+            <if test="planType != null and planType != ''"> and plan_type = #{planType} </if>
+            <if test="executeStatus != null and executeStatus != ''"> and execute_status = #{executeStatus} </if>
+            <if test="topic != null and topic != ''"> and topic = #{topic} </if>
+            <if test="content != null and content != ''"> and content = #{content} </if>
+            <if test="remindType != null and remindType != ''"> and remind_type = #{remindType} </if>
+            <if test="remindValue != null and remindValue != ''"> and remind_value = #{remindValue} </if>
+            <if test="finishFlag != null and finishFlag != ''"> and finish_flag = #{finishFlag} </if>
+            <if test="startDate != null and startDate != ''"> and start_date = #{startDate} </if>
+            <if test="endDate != null and endDate != ''"> and end_date = #{endDate} </if>
+            <if test="executeDate != null and executeDate != ''"> and execute_date = #{executeDate} </if>
+            <if test="executeTime != null and executeTime != ''"> and execute_time = #{executeTime} </if>
+            <if test="cycleNumber != null and cycleNumber != ''"> and cycle_number = #{cycleNumber} </if>
+            <if test="cycleUnit != null and cycleUnit != ''"> and cycle_unit = #{cycleUnit} </if>
+            <if test="recentExecuteDate != null and recentExecuteDate != ''"> and recent_execute_date = #{recentExecuteDate} </if>
+            <if test="mondayFlag != null and mondayFlag != ''"> and monday_flag = #{mondayFlag} </if>
+            <if test="tuesdayFlag != null and tuesdayFlag != ''"> and tuesday_flag = #{tuesdayFlag} </if>
+            <if test="wednesdayFlag != null and wednesdayFlag != ''"> and wednesday_flag = #{wednesdayFlag} </if>
+            <if test="thursdayFlag != null and thursdayFlag != ''"> and thursday_flag = #{thursdayFlag} </if>
+            <if test="fridayFlag != null and fridayFlag != ''"> and friday_flag = #{fridayFlag} </if>
+            <if test="saturdayFlag != null and saturdayFlag != ''"> and saturday_flag = #{saturdayFlag} </if>
+            <if test="sundayFlag != null and sundayFlag != ''"> and sunday_flag = #{sundayFlag} </if>
+            <if test="createBy != null and createBy != ''"> and create_by = #{createBy} </if>
+            <if test="createTime != null and createTime != ''"> and create_time = #{createTime} </if>
+            <if test="updateBy != null and updateBy != ''"> and update_by = #{updateBy} </if>
+            <if test="updateTime != null and updateTime != ''"> and update_time = #{updateTime} </if>
+            <if test="remark != null and remark != ''"> and remark = #{remark} </if>
+            <if test="delFlag != null and delFlag != ''"> and del_flag = #{delFlag} </if>
+        </where>
+    </select>
+
+    <insert id="save" parameterType="com.hanxiaozhang.planRemind.domain.PlanRemindDO">
+		insert into sys_plan_remind
+		(
+			`id`,
+			`plan_type`,
+			`execute_status`,
+			`topic`,
+			`content`,
+			`remind_type`,
+			`remind_value`,
+			`finish_flag`,
+			`start_date`,
+			`end_date`,
+			`execute_date`,
+			`execute_time`,
+			`cycle_number`,
+			`cycle_unit`,
+			`recent_execute_date`,
+			`monday_flag`,
+			`tuesday_flag`,
+			`wednesday_flag`,
+			`thursday_flag`,
+			`friday_flag`,
+			`saturday_flag`,
+			`sunday_flag`,
+			`create_by`,
+			`create_time`,
+			`update_by`,
+			`update_time`,
+			`remark`,
+			`del_flag`
+		)
+		values
+		(
+			#{id},
+			#{planType},
+			#{executeStatus},
+			#{topic},
+			#{content},
+			#{remindType},
+			#{remindValue},
+			#{finishFlag},
+			#{startDate},
+			#{endDate},
+			#{executeDate},
+			#{executeTime},
+			#{cycleNumber},
+			#{cycleUnit},
+			#{recentExecuteDate},
+			#{mondayFlag}, 
+			#{tuesdayFlag}, 
+			#{wednesdayFlag}, 
+			#{thursdayFlag}, 
+			#{fridayFlag}, 
+			#{saturdayFlag}, 
+			#{sundayFlag}, 
+			#{createBy}, 
+			#{createTime}, 
+			#{updateBy}, 
+			#{updateTime}, 
+			#{remark}, 
+			#{delFlag}
+		)
+	</insert>
+
+    <update id="update" parameterType="com.hanxiaozhang.planRemind.domain.PlanRemindDO">
+        update sys_plan_remind
+        <set>
+            `plan_type` = #{planType},
+            `execute_status` = #{executeStatus},
+            `topic` = #{topic},
+            `content` = #{content},
+            `start_date` = #{startDate},
+            `end_date` = #{endDate},
+            `execute_date` = #{executeDate},
+            `execute_time` = #{executeTime},
+            `cycle_number` = #{cycleNumber},
+            `cycle_unit` = #{cycleUnit},
+            `monday_flag` = #{mondayFlag},
+            `tuesday_flag` = #{tuesdayFlag},
+            `wednesday_flag` = #{wednesdayFlag},
+            `thursday_flag` = #{thursdayFlag},
+            `friday_flag` = #{fridayFlag},
+            `saturday_flag` = #{saturdayFlag},
+            `sunday_flag` = #{sundayFlag},
+            <if test="recentExecuteDateFlag != null">`recent_execute_date` = null, </if>
+            <if test="recentExecuteDate != null">`recent_execute_date` = #{recentExecuteDate}, </if>
+            <if test="remindType != null">`remind_type` = #{remindType}, </if>
+            <if test="remindValue != null">`remind_value` = #{remindValue}, </if>
+            <if test="finishFlag != null">`finish_flag` = #{finishFlag}, </if>
+            <if test="createBy != null">`create_by` = #{createBy},</if>
+            <if test="createTime != null">`create_time` = #{createTime},</if>
+            <if test="updateBy != null">`update_by` = #{updateBy},</if>
+            <if test="updateTime != null">`update_time` = #{updateTime},</if>
+            <if test="remark != null">`remark` = #{remark},</if>
+            <if test="delFlag != null">`del_flag` = #{delFlag}</if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <delete id="remove">
+		delete from sys_plan_remind where id = #{value}
+	</delete>
+
+    <delete id="batchRemove">
+        delete from sys_plan_remind where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

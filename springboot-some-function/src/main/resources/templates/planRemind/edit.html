@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head th:include="include :: header"></head>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content ">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content">
+						<form class="form-horizontal m-t" id="signupForm">
+							<input type="hidden" id="id" name="id" th:value="${planRemind.id}"/>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">主题：<i style="color: red;">*</i></label>
+								<div class="col-sm-4">
+									<input id="topic" name="topic" class="form-control" type="text"  th:value="${planRemind.topic}"/>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-2 control-label">内容：<i style="color: red;">*</i></label>
+								<div class="col-sm-10">
+									<textarea rows="4" class="form-control"  id="content" name="content" th:text="${planRemind.content}" ></textarea>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-2 control-label">提醒形式：<i style="color: red;">*</i></label>
+								<div class="col-sm-4">
+									<select id="remindType" name="remindType" data-placeholder="选择类别"
+											class="col-sm-4 form-control chosen-select"
+											tabindex="2">
+										<option value="0" th:selected="${planRemind.remindType eq 0}">邮件</option>
+									</select>
+								</div>
+								<label class="col-sm-2 control-label">提醒值：<i style="color: red;">*</i></label>
+								<div class="col-sm-4">
+									<input id="remindValue" name="remindValue" class="form-control" type="text" th:value="${planRemind.remindValue}"/>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-2 control-label">执行状态：<i style="color: red;">*</i></label>
+								<div class="col-sm-4">
+									<select id="executeStatus" name="executeStatus" data-placeholder="选择类别"
+											class="col-sm-4 form-control chosen-select"
+											tabindex="2">
+										<option value="1" th:selected="${planRemind.executeStatus eq 1}">启动</option>
+										<option value="0" th:selected="${planRemind.executeStatus eq 0}">停止</option>
+									</select>
+								</div>
+								<label class="col-sm-2 control-label">计划类型：<i style="color: red;">*</i></label>
+								<div class="col-sm-4">
+									<select id="planType" name="planType" data-placeholder="选择类别"
+											class="col-sm-4 form-control chosen-select" onchange="selectPlan()"
+											tabindex="2">
+										<option value="0" th:selected="${planRemind.planType eq 0}">单次执行</option>
+										<option value="1" th:selected="${planRemind.planType eq 1}">每日执行</option>
+										<option value="2" th:selected="${planRemind.planType eq 2}">周期执行</option>
+										<option value="3" th:selected="${planRemind.planType eq 3}">星期执行</option>
+										<option value="4" th:selected="${planRemind.planType eq 4}">周期星期执行</option>
+									</select>
+								</div>
+								<br>
+								<h4 class="page-header" style="color:red;"></h4>
+							</div>
+
+							<div id="cycleDateFlag" style="display: none">
+								<div class="form-group">
+									<label class="col-sm-2 control-label">开始日期：</label>
+									<div class="col-sm-4">
+										<input id="startDate" name="startDate" class="form-control"
+											   onFocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true})" type="text"
+											   th:value="${planRemind.startDate}"/>
+									</div>
+									<label class="col-sm-2 control-label">结束日期：</label>
+									<div class="col-sm-4">
+										<input id="endDate" name="endDate" class="form-control"
+											   onFocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true})" type="text"
+											   th:value="${planRemind.endDate}"/>
+									</div>
+								</div>
+							</div>
+
+
+							<div id="executeDateFlag" style="display: none">
+								<div class="form-group">
+									<label class="col-sm-2 control-label">执行日期：</label>
+									<div class="col-sm-4">
+										<input id="executeDate" name="executeDate" class="form-control"
+											   onFocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true})" type="text"
+											   th:value="${planRemind.executeDate}"/>
+									</div>
+								</div>
+							</div>
+
+							<div id="executeTimeFlag" style="display: none">
+								<div class="form-group">
+									<label class="col-sm-2 control-label">执行时间：</label>
+									<div class="col-sm-4">
+										<input id="executeTime" name="executeTime" class="form-control"
+											   onFocus="WdatePicker({dateFmt:'HH:mm:ss',readOnly:true})" type="text" th:value="${planRemind.executeTime}"/>
+									</div>
+								</div>
+							</div>
+
+							<div id="cycleNumberFlag" style="display: none">
+								<div class="form-group">
+									<label class="col-sm-2 control-label">周期个数：</label>
+									<div class="col-sm-4">
+										<input id="cycleNumber" name="cycleNumber" class="form-control" type="number" th:value="${planRemind.cycleNumber}">
+									</div>
+									<label class="col-sm-2 control-label">周期单位：</label>
+									<div class="col-sm-4">
+										<select id="cycleUnit" name="cycleUnit" data-placeholder="选择类别"
+												class="col-sm-4 form-control chosen-select" onchange="selectPlan()"
+												tabindex="2">
+<!--											<option value="0" th:selected="${planRemind.cycleUnit eq 0}" >秒</option>-->
+											<option value="1" th:selected="${planRemind.cycleUnit eq 1}" >分</option>
+											<option value="2" th:selected="${planRemind.cycleUnit eq 2}" >时</option>
+											<option value="3" th:selected="${planRemind.cycleUnit eq 3}" >天</option>
+											<option value="4" th:selected="${planRemind.cycleUnit eq 4}" >月</option>
+											<option value="5" th:selected="${planRemind.cycleUnit eq 5}" >年</option>
+										</select>
+									</div>
+								</div>
+
+							</div>
+
+							<div id="weekFlag" style="display: none">
+								<div class="form-group">
+									<label class="col-sm-2 control-label"> 周一：</label>
+									<div class="col-sm-4">
+										<label class="col-sm-2 control-label"><input name="mondayFlag" type="radio"
+																					 value="1"
+																					 th:checked="${planRemind.mondayFlag == 1 || planRemind.mondayFlag == null}"/>是</label>
+										<label class="col-sm-2 control-label"><input name="mondayFlag" type="radio"
+																					 value="0"
+																					 th:checked="${planRemind.mondayFlag == 0}"/>否</label>
+									</div>
+
+
+									<label class="col-sm-2 control-label"> 周二：</label>
+									<div class="col-sm-4">
+										<label class="col-sm-2 control-label"><input name="tuesdayFlag" type="radio"
+																					 value="2"
+																					 th:checked="${planRemind.tuesdayFlag == 2 || planRemind.tuesdayFlag == null}"/>是</label>
+										<label class="col-sm-2 control-label"><input name="tuesdayFlag" type="radio"
+																					 value="0"
+																					 th:checked="${planRemind.tuesdayFlag == 0}"/>否</label>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-sm-2 control-label"> 周三：</label>
+									<div class="col-sm-4">
+										<label class="col-sm-2 control-label"><input name="wednesdayFlag" type="radio"
+																					 value="3"
+																					 th:checked="${planRemind.wednesdayFlag == 3 || planRemind.wednesdayFlag == null}"/>是</label>
+										<label class="col-sm-2 control-label"><input name="wednesdayFlag" type="radio"
+																					 value="0"
+																					 th:checked="${planRemind.wednesdayFlag == 0}"/>否</label>
+									</div>
+									<label class="col-sm-2 control-label"> 周四：</label>
+
+									<div class="col-sm-4">
+										<label class="col-sm-2 control-label"><input name="thursdayFlag" type="radio"
+																					 value="4"
+																					 th:checked="${planRemind.thursdayFlag == 4 || planRemind.thursdayFlag == null}"/>是</label>
+										<label class="col-sm-2 control-label"><input name="thursdayFlag" type="radio"
+																					 value="0"
+																					 th:checked="${planRemind.thursdayFlag == 0}"/>否</label>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-sm-2 control-label"> 周五：</label>
+									<div class="col-sm-4">
+										<label class="col-sm-2 control-label"><input name="fridayFlag" type="radio"
+																					 value="5"
+																					 th:checked="${planRemind.fridayFlag == 5 || planRemind.fridayFlag == null}"/>是</label>
+										<label class="col-sm-2 control-label"><input name="fridayFlag" type="radio"
+																					 value="0"
+																					 th:checked="${planRemind.fridayFlag == 0}"/>否</label>
+									</div>
+									<label class="col-sm-2 control-label"> 周六：</label>
+									<div class="col-sm-4">
+										<label class="col-sm-2 control-label"><input name="saturdayFlag" type="radio"
+																					 value="6"
+																					 th:checked="${planRemind.saturdayFlag == 6 || planRemind.saturdayFlag == null}"/>是</label>
+										<label class="col-sm-2 control-label"><input name="saturdayFlag" type="radio"
+																					 value="0"
+																					 th:checked="${planRemind.saturdayFlag == 0}"/>否</label>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-sm-2 control-label"> 周日：</label>
+									<div class="col-sm-4">
+										<label class="col-sm-2 control-label"><input name="sundayFlag" type="radio"
+																					 value="7"
+																					 th:checked="${planRemind.sundayFlag == 7 || planRemind.sundayFlag == null}"/>是</label>
+										<label class="col-sm-2 control-label"><input name="sundayFlag" type="radio"
+																					 value="0"
+																					 th:checked="${planRemind.sundayFlag == 0}"/>否</label>
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-sm-12 col-sm-offset-6">
+									<button type="submit" class="btn btn-primary">提交</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+	</div>
+	</div>
+	<div th:include="include::footer"></div>
+	<script type="text/javascript" src="/js/appjs/planRemind/edit.js">
+	</script>
+</body>
+</html>

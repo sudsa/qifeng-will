@@ -1,0 +1,26 @@
+POST http://localhost:8080/save
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json; charset=UTF-8
+
+{"name":"小李","age":21,"info": 22,"createTime":"2020-03-08"}
+
+
+###
+GET http://localhost:8080/get?id=5ee587434a51c61cecb952f3
+
+
+###
+GET http://localhost:8080/listLikeByName?name=小
+
+
+
+###
+POST http://localhost:8080/update
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json; charset=UTF-8
+
+{"id": "5ee587434a51c61cecb952f3","name":"小张","age":21,"info": 22,"createTime":"2020-03-07"}
+
+###

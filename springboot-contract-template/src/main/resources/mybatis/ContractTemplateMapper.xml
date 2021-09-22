@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hanxiaozhang.contracttemplate.dao.ContractTemplateDao">
+
+	<select id="get" resultType="com.hanxiaozhang.contracttemplate.domain.ContractTemplateDO">
+		select `template_id`,`template_name`,`template_status`,`template_content`,`channel_id`,`type`,`version`,`create_by`,`create_date`,`update_by`,`update_date`,`remark`,`del_flag` from contract_template where template_id = #{value}
+	</select>
+
+	<select id="list" resultType="com.hanxiaozhang.contracttemplate.domain.ContractTemplateDO">
+		select `template_id`,`template_name`,`template_status`,`template_content`,`channel_id`,`type`,`version`,`create_by`,`create_date`,`update_by`,`update_date`,`remark`,`del_flag` from contract_template
+        <where>  
+		  		  <if test="templateId != null and templateId != ''"> and template_id = #{templateId} </if>
+		  		  <if test="templateName != null and templateName != ''"> and template_name = #{templateName} </if>
+		  		  <if test="templateStatus != null and templateStatus != ''"> and template_status = #{templateStatus} </if>
+		  		  <if test="templateContent != null and templateContent != ''"> and template_content = #{templateContent} </if>
+		  		  <if test="channelId != null and channelId != ''"> and channel_id = #{channelId} </if>
+		  		  <if test="type != null and type != ''"> and type = #{type} </if>
+		  		  <if test="version != null and version != ''"> and version = #{version} </if>
+		  		  <if test="createBy != null and createBy != ''"> and create_by = #{createBy} </if>
+		  		  <if test="createDate != null and createDate != ''"> and create_date = #{createDate} </if>
+		  		  <if test="updateBy != null and updateBy != ''"> and update_by = #{updateBy} </if>
+		  		  <if test="updateDate != null and updateDate != ''"> and update_date = #{updateDate} </if>
+		  		  <if test="remark != null and remark != ''"> and remark = #{remark} </if>
+		  		  <if test="delFlag != null and delFlag != ''"> and del_flag = #{delFlag} </if>
+		  		</where>
+        <choose>
+            <when test="sort != null and sort.trim() != ''">
+                order by ${sort} ${order}
+            </when>
+			<otherwise>
+                order by template_id desc
+			</otherwise>
+        </choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+	
+ 	<select id="count" resultType="int">
+		select count(*) from contract_template
+		 <where>  
+		  		  <if test="templateId != null and templateId != ''"> and template_id = #{templateId} </if>
+		  		  <if test="templateName != null and templateName != ''"> and template_name = #{templateName} </if>
+		  		  <if test="templateStatus != null and templateStatus != ''"> and template_status = #{templateStatus} </if>
+		  		  <if test="templateContent != null and templateContent != ''"> and template_content = #{templateContent} </if>
+		  		  <if test="channelId != null and channelId != ''"> and channel_id = #{channelId} </if>
+		  		  <if test="type != null and type != ''"> and type = #{type} </if>
+		  		  <if test="version != null and version != ''"> and version = #{version} </if>
+		  		  <if test="createBy != null and createBy != ''"> and create_by = #{createBy} </if>
+		  		  <if test="createDate != null and createDate != ''"> and create_date = #{createDate} </if>
+		  		  <if test="updateBy != null and updateBy != ''"> and update_by = #{updateBy} </if>
+		  		  <if test="updateDate != null and updateDate != ''"> and update_date = #{updateDate} </if>
+		  		  <if test="remark != null and remark != ''"> and remark = #{remark} </if>
+		  		  <if test="delFlag != null and delFlag != ''"> and del_flag = #{delFlag} </if>
+		  		</where>
+	</select>
+	 
+	<insert id="save" parameterType="com.hanxiaozhang.contracttemplate.domain.ContractTemplateDO">
+		insert into contract_template
+		(
+			`template_id`, 
+			`template_name`, 
+			`template_status`, 
+			`template_content`, 
+			`channel_id`, 
+			`type`, 
+			`version`, 
+			`create_by`, 
+			`create_date`, 
+			`update_by`, 
+			`update_date`, 
+			`remark`, 
+			`del_flag`
+		)
+		values
+		(
+			#{templateId}, 
+			#{templateName}, 
+			#{templateStatus}, 
+			#{templateContent}, 
+			#{channelId}, 
+			#{type}, 
+			#{version}, 
+			#{createBy}, 
+			#{createDate}, 
+			#{updateBy}, 
+			#{updateDate}, 
+			#{remark}, 
+			#{delFlag}
+		)
+	</insert>
+	 
+	<update id="update" parameterType="com.hanxiaozhang.contracttemplate.domain.ContractTemplateDO">
+		update contract_template 
+		<set>
+			<if test="templateName != null">`template_name` = #{templateName}, </if>
+			<if test="templateStatus != null">`template_status` = #{templateStatus}, </if>
+			<if test="templateContent != null">`template_content` = #{templateContent}, </if>
+			<if test="channelId != null">`channel_id` = #{channelId}, </if>
+			<if test="type != null">`type` = #{type}, </if>
+			<if test="version != null">`version` = #{version}, </if>
+			<if test="createBy != null">`create_by` = #{createBy}, </if>
+			<if test="createDate != null">`create_date` = #{createDate}, </if>
+			<if test="updateBy != null">`update_by` = #{updateBy}, </if>
+			<if test="updateDate != null">`update_date` = #{updateDate}, </if>
+			<if test="remark != null">`remark` = #{remark}, </if>
+			<if test="delFlag != null">`del_flag` = #{delFlag}</if>
+		</set>
+		where template_id = #{templateId}
+	</update>
+	
+	<delete id="remove">
+		delete from contract_template where template_id = #{value}
+	</delete>
+	
+	<delete id="batchRemove">
+		delete from contract_template where template_id in 
+		<foreach item="templateId" collection="array" open="(" separator="," close=")">
+			#{templateId}
+		</foreach>
+	</delete>
+
+</mapper>

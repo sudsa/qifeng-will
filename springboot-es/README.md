@@ -1,0 +1,5 @@
+#注意：
+启动被注释//@SpringBootApplication 原因:  
+springboot-httpClient中调用该工具类方法，测试方法不能启动，报错如下：  
+java.lang.IllegalStateException: Found multiple @SpringBootConfiguration annotated classes [Generic bean: class [com.hanxiaozhang.SpringbootHttpclientApplication]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [D:\IdeaProjects_2017\springboot_demo\springboot-httpclient\target\classes\com\hanxiaozhang\SpringbootHttpclientApplication.class], Generic bean: class [com.hanxiaozhang.SpringbootUtilsApplication]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [D:\IdeaProjects_2017\springboot_demo\springboot-utils\target\classes\com\hanxiaozhang\SpringbootUtilsApplication.class]]
+

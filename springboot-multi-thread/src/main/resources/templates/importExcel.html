@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div >
+    <form id="importPlan" method="post" enctype="multipart/form-data" style="float: left">
+        <input class="form-control" id="file" name="file" type="file">
+    </form>
+    <button type="button" onclick="importExcel()" style="float: left;margin-right: 10px">导入测试</button>
+    <form action="/exportExcel" method="post" id="exportForm"
+          style="display: none;">
+        <input type="text" name="data" id="data" value=""/>
+    </form>
+</div>
+
+<script type="text/javascript" src="/jquery.min.js?v=2.1.4"></script>
+<script type="text/javascript" src="/importExcel.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+spring:
+  data:
+    mongodb:
+      # 有用户名和密码的格式：mongodb://name:pass@localhost:27017/test，其中name是用户名，pass是密码
+      # 配置多个数据库，中间用","分割：//192.168.1.1:20000,192.168.1.2:20000,192.168.252.12:20000/test
+      uri: mongodb://localhost:27017/mongodb_test
