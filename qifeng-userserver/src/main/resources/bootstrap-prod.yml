@@ -1,0 +1,14 @@
+nacos:
+  server-addr: 10.128.3.191:30848
+  namespace: b460e94c-79c7-4fcc-a85f-a5c8ca9e3bbc
+spring:
+  application:
+    name: gateway-api
+  cloud:
+    nacos:
+      config:
+        server-addr: ${nacos.server-addr}
+        file-extension: yml
+        namespace: ${nacos.namespace}
+
+domain: gateway-api

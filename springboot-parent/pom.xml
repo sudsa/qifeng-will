@@ -58,6 +58,7 @@
 		<module>../qifeng-gateway</module>
 		<module>../qifeng-arcSoftFace</module>
 		<module>../qifeng-proxy</module>
+		<module>../qifeng-userserver</module>
 	</modules>
 
 
