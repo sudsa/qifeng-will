@@ -8,10 +8,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableTransactionManagement
-public class SpringbootWebserverApplication {
+public class WebserverApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringbootWebserverApplication.class, args);
+        SpringApplication.run(WebserverApplication.class, args);
         System.out.println("   ヾ(◍°∇°◍)ﾉﾞ        START UP SUCCESS       ヾ(◍°∇°◍)ﾉﾞ   \n" +
                 "        __________________      _     _            \n" +
                 "       /  |    _     _    |    | |   | | _____    __    _       \n" +
