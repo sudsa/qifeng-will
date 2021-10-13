@@ -12,9 +12,18 @@
 
 	<artifactId>springboot-mqtt</artifactId>
 	<name>springboot-mqtt</name>
-	<description>Demo mqtt for Spring Boot</description>
+	<description>will mqtt for Spring Boot</description>
 
-
+	<dependencyManagement>
+		<dependencies>
+			<!-- mqtt-client -->
+			<dependency>
+				<groupId>org.eclipse.paho</groupId>
+				<artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+				<version>1.2.5</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 
 </project>
