@@ -1,0 +1,22 @@
+nacos:
+  server-addr: 10.0.73.127:8848
+  #server-addr: http://10.128.4.170:88481
+  namespace: 272c1cc4-2baa-4fec-bcc8-c0ab144b792a
+spring:
+  application:
+    name: devicehelper-test-server
+  cloud:
+    nacos:
+      config:
+        server-addr: ${nacos.server-addr}
+        file-extension: yml
+        namespace: ${nacos.namespace}
+        #shared-dataids: organization-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+      discovery:
+        server-addr: ${nacos.server-addr}
+        service: ${spring.application.name}
+        enabled: true
+        #namespace: ${nacos.namespace}
+        namespace: public
+
+domain: devicehelper-test-server

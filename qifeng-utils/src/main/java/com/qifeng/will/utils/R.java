@@ -1,75 +1,75 @@
-package com.qifeng.will.utils;
+package com.hanxiaozhang.utils;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import lombok.*;
-import lombok.experimental.Accessors;
-
-import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
- * 响应信息主体
+ * 功能描述: <br>
+ * 〈R〉
  *
- * @param <T>
- * @author 杜志诚
+ * @Author:hanxinghua
+ * @Date: 2020/2/18
  */
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Accessors(chain = true)
-@ApiModel(value = "响应信息主体")
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class R<T> implements Serializable {
-    private static final long serialVersionUID = 1L;
-    @Getter
-    @Setter
-    @ApiModelProperty(value = "返回标记：成功标记=0，失败标记=1")
-    private int code;
-    @Getter
-    @Setter
-    @ApiModelProperty(value = "返回信息")
-    private String msg;
-    @Getter
-    @Setter
-    @ApiModelProperty(value = "数据")
-    private T data;
+public class R extends HashMap<String, Object> {
+	private static final long serialVersionUID = 1L;
 
-    public static <T> R<T> ok() {
-        return restResult(null, HttpRespMsg.SUCCESS, HttpRespMsg.MSG);
-    }
+	public R() {
+		put("code", 0);
+		put("msg", "操作成功");
+	}
 
-    public static <T> R<T> ok(T data) {
-        return restResult(data, HttpRespMsg.SUCCESS, HttpRespMsg.MSG);
-    }
+	public static R ok() {
+		return new R();
+	}
 
-    public static <T> R<T> ok(T data, String msg) {
-        return restResult(data, HttpRespMsg.SUCCESS, msg);
-    }
+	public static R ok(String msg) {
+		R r = new R();
+		r.put("msg", msg);
+		return r;
+	}
 
-    public static <T> R<T> failed() {
-        return restResult(null, HttpRespMsg.FAIL, HttpRespMsg.FAIL_MSG);
-    }
-
-    public static <T> R<T> failed(String msg) {
-        return restResult(null, HttpRespMsg.FAIL, msg);
-    }
-
-    public static <T> R<T> failed(T data) {
-        return restResult(data, HttpRespMsg.FAIL, null);
-    }
-
-    public static <T> R<T> failed(Integer code, String msg) {
-        return restResult(null, code, msg);
-    }
+	public static R ok(Map<String, Object> map) {
+		R r = new R();
+		r.putAll(map);
+		return r;
+	}
 
 
-    @SneakyThrows
-    private static <T> R<T> restResult(T data, int code, String msg) {
-        R<T> apiResult = new R<>();
-        apiResult.setCode(code);
-        apiResult.setData(data);
-        apiResult.setMsg(msg);
-        return apiResult;
-    }
+	public static R error() {
+		return error(1, "操作失败");
+	}
+
+	public static R error(int code, String msg) {
+		R r = new R();
+		r.put("code", code);
+		r.put("msg", msg);
+		return r;
+	}
+
+	public static R error(String msg) {
+		return error(1, msg);
+	}
+
+
+	public static R error(Map<String, Object> map) {
+		R r = new R();
+		r.put("code", 1);
+		r.put("map", map);
+		r.put("msg", "操作失败");
+		return r;
+	}
+	public static R error(int code, Map<String, Object> map,String msg) {
+		R r = new R();
+		r.put("code", code);
+		r.put("map", map);
+		r.put("msg", msg);
+		return r;
+	}
+
+
+	@Override
+	public R put(String key, Object value) {
+		super.put(key, value);
+		return this;
+	}
 }
