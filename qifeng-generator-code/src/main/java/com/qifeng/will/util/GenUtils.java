@@ -1,10 +1,9 @@
-package com.hanxiaozhang.util;
+package com.qifeng.will.util;
 
 
 
-import com.hanxiaozhang.domain.ColumnDO;
-import com.hanxiaozhang.domain.TableDO;
-import com.hanxiaozhang.utils.DateUtil;
+import com.qifeng.will.domain.ColumnDO;
+import com.qifeng.will.domain.TableDO;
 import org.apache.commons.configuration.Configuration;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
@@ -27,7 +26,7 @@ import java.util.zip.ZipOutputStream;
  * 功能描述: <br>
  * 〈代码生成器   工具类〉
  *
- * @Author:hanxinghua
+ * @Author:howill.zou
  * @Date: 2020/6/19
  */
 public class GenUtils {
@@ -155,7 +154,7 @@ public class GenUtils {
         map.put("package", config.getString("package"));
         map.put("author", config.getString("author"));
         map.put("email", config.getString("email"));
-        map.put("datetime", DateUtil.format(new Date(), DateUtil.DATE_TIME_PATTERN));
+        map.put("datetime", com.hanxiaozhang.utils.DateUtil.format(new Date(), DateUtil.DATE_TIME_PATTERN));
         map.put("hasBigDecimal", hasBigDecimal);
         VelocityContext context = new VelocityContext(map);
 

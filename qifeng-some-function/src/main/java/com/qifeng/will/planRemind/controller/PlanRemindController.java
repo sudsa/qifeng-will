@@ -1,13 +1,15 @@
-package com.hanxiaozhang.planRemind.controller;
+package com.qifeng.will.planRemind.controller;
 
 import java.util.List;
 import java.util.Map;
 
 
-import com.hanxiaozhang.utils.PageUtils;
-import com.hanxiaozhang.utils.Query;
-import com.hanxiaozhang.utils.R;
-import com.hanxiaozhang.utils.StringUtil;
+import com.qifeng.will.planRemind.domain.PlanRemindDO;
+import com.qifeng.will.planRemind.service.PlanRemindService;
+import com.qifeng.will.utils.PageUtils;
+import com.qifeng.will.utils.Query;
+import com.qifeng.will.utils.R;
+import com.qifeng.will.utils.StringUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,8 +21,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.hanxiaozhang.planRemind.domain.PlanRemindDO;
-import com.hanxiaozhang.planRemind.service.PlanRemindService;
 
 
 /**
@@ -28,8 +28,8 @@ import com.hanxiaozhang.planRemind.service.PlanRemindService;
  * 开发耗时9h
  *
  *
- * @author hanxinghua
- * @email hanxinghua2015@sina.com
+ * @author howill
+ * @email howill@sina.com
  * @date 2020-07-05 10:18:16
  */
 @Slf4j

@@ -32,10 +32,6 @@
             <version>0.5.9</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.qifeng.will</groupId>
-            <artifactId>qifeng-utils</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -91,6 +87,12 @@
                     <groupId>org.slf4j</groupId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.qifeng.will</groupId>
+            <artifactId>qifeng-utils</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>

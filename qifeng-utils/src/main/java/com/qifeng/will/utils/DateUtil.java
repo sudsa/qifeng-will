@@ -1,4 +1,4 @@
-package com.hanxiaozhang.utils;
+package com.qifeng.will.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

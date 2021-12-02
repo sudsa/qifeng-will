@@ -1,4 +1,4 @@
-package com.hanxiaozhang.strategy;
+package com.qifeng.will.strategy;
 
 import org.springframework.stereotype.Component;
 

@@ -1,5 +1,6 @@
-package com.hanxiaozhang.strategy.simple1;
+package com.qifeng.will.strategy.simple1;
 
+import com.qifeng.will.strategy.simple1.SimpleStrategy;
 import org.springframework.stereotype.Service;
 
 /**

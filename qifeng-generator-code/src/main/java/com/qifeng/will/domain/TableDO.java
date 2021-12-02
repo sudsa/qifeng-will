@@ -1,4 +1,4 @@
-package com.hanxiaozhang.domain;
+package com.qifeng.will.domain;
 
 import lombok.Data;
 
@@ -8,7 +8,7 @@ import java.util.List;
  * 功能描述: <br>
  * 〈表数据〉
  *
- * @Author:hanxinghua
+ * @Author:howill.zou
  * @Date: 2020/6/19
  */
 

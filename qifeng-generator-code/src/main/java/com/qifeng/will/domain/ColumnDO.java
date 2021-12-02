@@ -1,4 +1,4 @@
-package com.hanxiaozhang.domain;
+package com.qifeng.will.domain;
 
 
 import lombok.Data;
@@ -7,7 +7,7 @@ import lombok.Data;
  * 功能描述: <br>
  * 〈列的属性〉
  *
- * @Author:hanxinghua
+ * @Author:howill.zou
  * @Date: 2020/6/19
  */
 

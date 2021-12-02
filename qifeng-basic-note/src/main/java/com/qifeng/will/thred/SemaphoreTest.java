@@ -1,4 +1,4 @@
-package com.hanxiaozhang.thred;
+package com.qifeng.will.thred;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

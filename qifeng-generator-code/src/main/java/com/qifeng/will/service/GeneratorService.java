@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.hanxiaozhang.service;
+package com.qifeng.will.service;
 
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.util.Map;
  * 功能描述: <br>
  * 〈GeneratorService〉
  *
- * @Author:hanxinghua
+ * @Author:howill.zou
  * @Date: 2020/6/19
  */
 public interface GeneratorService {

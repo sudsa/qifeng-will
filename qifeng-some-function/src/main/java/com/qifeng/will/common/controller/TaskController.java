@@ -1,10 +1,10 @@
-package com.hanxiaozhang.common.controller;
+package com.qifeng.will.common.controller;
 
-import com.hanxiaozhang.common.domain.TaskDO;
-import com.hanxiaozhang.common.service.TaskService;
-import com.hanxiaozhang.utils.PageUtils;
-import com.hanxiaozhang.utils.Query;
-import com.hanxiaozhang.utils.R;
+import com.qifeng.will.common.domain.TaskDO;
+import com.qifeng.will.common.service.TaskService;
+import com.qifeng.will.utils.PageUtils;
+import com.qifeng.will.utils.Query;
+import com.qifeng.will.utils.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

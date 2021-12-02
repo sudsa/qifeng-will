@@ -1,6 +1,6 @@
-package com.hanxiaozhang.common.service;
+package com.qifeng.will.common.service;
 
-import com.hanxiaozhang.common.dto.FileDTO;
+import com.qifeng.will.common.dto.FileDTO;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;

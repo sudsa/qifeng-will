@@ -1,6 +1,6 @@
-package com.hanxiaozhang.common.dao;
+package com.qifeng.will.common.dao;
 
-import com.hanxiaozhang.common.domain.DictDO;
+import com.qifeng.will.common.domain.DictDO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -11,8 +11,8 @@ import java.util.Map;
 /**
  * 字典表
  *
- * @author hanxinghua
- * @email hanxinghua2015@sina.com
+ * @author howill
+ * @email howill@sina.com
  * @date 2020-04-30 09:43:57
  */
 @Mapper

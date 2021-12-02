@@ -1,7 +1,7 @@
-package com.hanxiaozhang.utils.exception;
+package com.qifeng.will.utils.exception;
 
 
-import com.hanxiaozhang.utils.StringUtil;
+import com.qifeng.will.utils.StringUtil;
 import lombok.Data;
 
 

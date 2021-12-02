@@ -1,17 +1,16 @@
-package com.hanxiaozhang.common.service;
-
-import com.hanxiaozhang.common.domain.TaskDO;
+package com.qifeng.will.common.service;
 
 import java.util.List;
 import java.util.Map;
 
+import com.qifeng.will.common.domain.TaskDO;
 import org.quartz.SchedulerException;
 
 /**
  * 功能描述: <br>
  * 〈〉
  *
- * @Author:hanxinghua
+ * @Author:howill
  * @Date: 2020/9/9
  */
 public interface TaskService {

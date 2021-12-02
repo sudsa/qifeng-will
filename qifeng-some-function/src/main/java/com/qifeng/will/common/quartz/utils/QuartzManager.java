@@ -1,6 +1,6 @@
-package com.hanxiaozhang.common.quartz.utils;
+package com.qifeng.will.common.quartz.utils;
 
-import com.hanxiaozhang.common.domain.ScheduleJob;
+import com.qifeng.will.common.domain.ScheduleJob;
 import lombok.extern.slf4j.Slf4j;
 import org.quartz.*;
 import org.quartz.DateBuilder.IntervalUnit;

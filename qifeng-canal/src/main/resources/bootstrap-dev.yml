@@ -1,0 +1,17 @@
+nacos:
+  server-addr: http://10.39.80.39:8849
+  namespace: 44cdb81a-cf48-4cc8-b537-320468125f16
+spring:
+  application:
+    name: canal-server
+  cloud:
+    nacos:
+      config:
+        server-addr: ${nacos.server-addr}
+        file-extension: yml
+        namespace: ${nacos.namespace}
+      discovery:
+        server-addr: ${nacos.server-addr}
+        enabled: true
+
+domain: canal-server

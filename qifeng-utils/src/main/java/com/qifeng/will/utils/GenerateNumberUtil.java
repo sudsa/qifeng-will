@@ -1,4 +1,4 @@
-package com.hanxiaozhang.utils;
+package com.qifeng.will.utils;
 
 
 import java.text.SimpleDateFormat;

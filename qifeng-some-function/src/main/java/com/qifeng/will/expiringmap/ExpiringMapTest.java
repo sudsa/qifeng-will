@@ -1,4 +1,4 @@
-package com.hanxiaozhang.expiringmap;
+package com.qifeng.will.expiringmap;
 
 import net.jodah.expiringmap.ExpirationPolicy;
 import net.jodah.expiringmap.ExpiringMap;
@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
  * 〈一句话功能简述〉<br>
  * 〈〉
  *
- * @author hanxinghua
+ * @author howill
  * @create 2020/11/17
  * @since 1.0.0
  */

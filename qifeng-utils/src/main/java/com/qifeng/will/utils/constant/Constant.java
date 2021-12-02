@@ -1,4 +1,4 @@
-package com.hanxiaozhang.utils.constant;
+package com.qifeng.will.utils.constant;
 
 /**
  * 〈一句话功能简述〉<br>

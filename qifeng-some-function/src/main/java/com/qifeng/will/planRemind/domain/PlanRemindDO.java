@@ -1,4 +1,4 @@
-package com.hanxiaozhang.planRemind.domain;
+package com.qifeng.will.planRemind.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

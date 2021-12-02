@@ -1,4 +1,4 @@
-package com.hanxiaozhang.strategy;
+package com.qifeng.will.strategy;
 
 /*
  *功能描述 策略模式

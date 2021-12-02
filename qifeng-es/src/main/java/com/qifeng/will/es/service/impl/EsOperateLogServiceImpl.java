@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSON;
 import com.qifeng.will.es.config.ElasticSearchConfig;
 import com.qifeng.will.es.dto.OperateLog;
 import com.qifeng.will.es.service.EsOperateLogService;
+import org.apache.poi.ss.formula.functions.T;
 import org.elasticsearch.action.bulk.BulkRequest;
 import org.elasticsearch.action.bulk.BulkResponse;
 import org.elasticsearch.action.index.IndexRequest;
@@ -17,6 +18,7 @@ import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.SearchHits;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -26,7 +28,9 @@ import java.util.List;
 public class EsOperateLogServiceImpl implements EsOperateLogService {
 
     @Autowired
+    @Qualifier("esSafeClient")
     private RestHighLevelClient esSafeRestClient;
+
 
 
     public IndexResponse insertLog(String index, OperateLog entity) {
@@ -58,7 +62,7 @@ public class EsOperateLogServiceImpl implements EsOperateLogService {
     }
 
     @Override
-    public <T> List<T> getLogs(String index, SearchSourceBuilder searchSourceBuilder, Class<T> resultClass) {
+    public List<OperateLog> getLogs(String index, SearchSourceBuilder searchSourceBuilder, Class<T> resultClass) {
         SearchRequest request = new SearchRequest(index);
         request.source(searchSourceBuilder);
         try {
@@ -66,10 +70,10 @@ public class EsOperateLogServiceImpl implements EsOperateLogService {
 
             SearchHits hits1 = response.getHits();
             SearchHit[] hits2 = hits1.getHits();
-            List<T> retList = new ArrayList<>(hits2.length);
+            List<OperateLog> retList = new ArrayList<>(hits2.length);
             for (SearchHit hit : hits2) {
                 String strJson = hit.getSourceAsString();
-                retList.add(JSON.parseObject(strJson, resultClass));
+                retList.add(JSON.parseObject(strJson, OperateLog.class));
             }
             return retList;
         } catch (Exception e) {

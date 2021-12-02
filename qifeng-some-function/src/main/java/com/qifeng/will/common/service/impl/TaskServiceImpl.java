@@ -1,12 +1,11 @@
-package com.hanxiaozhang.common.service.impl;
+package com.qifeng.will.common.service.impl;
 
-import com.hanxiaozhang.common.dao.TaskDao;
-import com.hanxiaozhang.common.domain.ScheduleJob;
-import com.hanxiaozhang.common.domain.TaskDO;
-import com.hanxiaozhang.common.quartz.utils.QuartzManager;
-import com.hanxiaozhang.common.service.TaskService;
-
-import com.hanxiaozhang.utils.constant.Constant;
+import com.qifeng.will.common.dao.TaskDao;
+import com.qifeng.will.common.domain.ScheduleJob;
+import com.qifeng.will.common.domain.TaskDO;
+import com.qifeng.will.common.quartz.utils.QuartzManager;
+import com.qifeng.will.common.service.TaskService;
+import com.qifeng.will.utils.constant.Constant;
 import org.quartz.SchedulerException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +19,7 @@ import java.util.Map;
  * 功能描述: <br>
  * 〈〉
  *
- * @Author:hanxinghua
+ * @Author:howill
  * @Date: 2020/9/9 
  */
 @Service

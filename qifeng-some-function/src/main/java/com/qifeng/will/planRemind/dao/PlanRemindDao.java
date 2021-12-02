@@ -1,19 +1,19 @@
-package com.hanxiaozhang.planRemind.dao;
+package com.qifeng.will.planRemind.dao;
 
-import com.hanxiaozhang.planRemind.domain.PlanRemindDO;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
+import com.qifeng.will.planRemind.domain.PlanRemindDO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Update;
 
 /**
  * 计划提醒表
- * @author hanxinghua
- * @email hanxinghua2015@sina.com
+ * @author howill
+ * @email howill@sina.com
  * @date 2020-07-05 10:18:16
  */
 @Mapper

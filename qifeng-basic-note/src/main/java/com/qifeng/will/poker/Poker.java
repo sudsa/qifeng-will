@@ -1,4 +1,4 @@
-package com.hanxiaozhang.poker;
+package com.qifeng.will.poker;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

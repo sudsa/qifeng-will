@@ -1,5 +1,27 @@
-package com.hanxiaozhang.common.controller;
+package com.qifeng.will.common.controller;
 
+import com.qifeng.will.common.dao.DictDao;
+import com.qifeng.will.common.dao.FileDao;
+import com.qifeng.will.common.domain.DictDO;
+import com.qifeng.will.common.domain.FileDO;
+import com.qifeng.will.common.dto.FileDTO;
+import com.qifeng.will.common.service.FileService;
+import com.qifeng.will.common.util.ZipDownloadUtil;
+import com.qifeng.will.utils.JsonUtil;
+import com.qifeng.will.utils.R;
+import com.qifeng.will.utils.StringUtil;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -8,41 +30,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.hanxiaozhang.common.dao.DictDao;
-import com.hanxiaozhang.common.dao.FileDao;
-import com.hanxiaozhang.common.domain.DictDO;
-import com.hanxiaozhang.common.dto.FileDTO;
-import com.hanxiaozhang.common.util.ZipDownloadUtil;
-import com.hanxiaozhang.utils.JsonUtil;
-import com.hanxiaozhang.utils.R;
-import com.hanxiaozhang.utils.StringUtil;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.hanxiaozhang.common.domain.FileDO;
-import com.hanxiaozhang.common.service.FileService;
-import org.springframework.web.multipart.MultipartFile;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletResponse;
-
 
 /**
  * 文件表
  * 
- * @author hanxinghua
- * @email hanxinghua2015@sina.com
+ * @author  howill.zou
+ * @email  howill.zou@sina.com
  * @date 2020-04-30 09:43:57
  */
 @Slf4j

@@ -1,4 +1,4 @@
-package com.hanxiaozhang.strategy.simple3;
+package com.qifeng.will.strategy.simple3;
 
 import org.springframework.stereotype.Service;
 
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
  * 〈一句话功能简述〉<br>
  * 〈〉
  *
- * @author hanxinghua
+ * @author howill.zou
  * @create 2020/5/11
  * @since 1.0.0
  */

@@ -1,13 +1,11 @@
-package com.hanxiaozhang.strategy.simple1;
+package com.qifeng.will.strategy.simple1;
 
-import com.hanxiaozhang.test.TestInterface;
-import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * 〈一句话功能简述〉<br>
  * 〈策略模式接口〉
  *
- * @author hanxinghua
+ * @author howill.zou
  * @create 2020/5/11
  * @since 1.0.0
  */

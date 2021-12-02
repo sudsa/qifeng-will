@@ -9,6 +9,7 @@ import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestClientBuilder;
 import org.elasticsearch.client.RestHighLevelClient;
+import org.elasticsearch.common.settings.Settings;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -59,5 +60,25 @@ public class ElasticSearchConfig {
         credentialsProvider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials(user, password));
         builder.setHttpClientConfigCallback(f -> f.setDefaultCredentialsProvider(credentialsProvider));
         return new RestHighLevelClient(builder);
+    }
+
+    public Settings settings(){
+        //指定ES集群
+        Settings setting = Settings.builder().put("cluster.name",
+                "my-application").build();
+
+        return setting;
+    }
+
+    public Settings indexSettings(){
+        //
+        Settings.Builder builder = Settings.builder();
+
+        return builder
+                .put("number-of-shards",1)//es 分片数量，通常对应es集群节点数量
+                .put("number-of-replicas",0)//副本数量
+                .put("max_result_window", Integer.MAX_VALUE)
+                .build();
+
     }
 }

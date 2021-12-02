@@ -1,4 +1,4 @@
-package com.hanxiaozhang.thred;
+package com.qifeng.will.thred;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.AsyncConfigurer;

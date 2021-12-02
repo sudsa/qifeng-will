@@ -1,4 +1,4 @@
-package com.hanxiaozhang.common.validation;
+package com.qifeng.will.common.validation;
 
 /**
  * 〈一句话功能简述〉<br>

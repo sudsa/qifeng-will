@@ -1,6 +1,6 @@
-package com.hanxiaozhang.common.dto;
+package com.qifeng.will.common.dto;
 
-import com.hanxiaozhang.common.domain.FileDO;
+import com.qifeng.will.common.domain.FileDO;
 import lombok.Data;
 
 /**

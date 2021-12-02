@@ -1,4 +1,4 @@
-package com.hanxiaozhang.configway;
+package com.qifeng.will.configway;
 
 import org.apache.activemq.command.ActiveMQQueue;
 import org.apache.activemq.command.ActiveMQTopic;

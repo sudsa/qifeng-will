@@ -1,6 +1,6 @@
-package com.hanxiaozhang.planRemind.service;
+package com.qifeng.will.planRemind.service;
 
-import com.hanxiaozhang.planRemind.domain.PlanRemindDO;
+import com.qifeng.will.planRemind.domain.PlanRemindDO;
 
 import javax.mail.MessagingException;
 import java.util.List;

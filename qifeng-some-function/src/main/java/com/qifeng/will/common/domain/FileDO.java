@@ -1,4 +1,4 @@
-package com.hanxiaozhang.common.domain;
+package com.qifeng.will.common.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,8 +14,8 @@ import java.util.Date;
 /**
  * 文件表
  * 
- * @author hanxinghua
- * @email hanxinghua2015@sina.com
+ * @author howill
+ * @email howill@sina.com
  * @date 2020-04-30 09:43:57
  */
 @Data

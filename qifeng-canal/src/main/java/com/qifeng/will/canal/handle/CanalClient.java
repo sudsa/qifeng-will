@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import java.net.InetSocketAddress;
 import java.util.List;
 
-@Component
+//@Component
 public class CanalClient implements InitializingBean {
 
     private final static int BATCH_SIZE = 1000;
@@ -18,12 +18,17 @@ public class CanalClient implements InitializingBean {
     @Override
     public void afterPropertiesSet() throws Exception {
         // 创建链接
-        CanalConnector connector = CanalConnectors.newSingleConnector(new InetSocketAddress("127.0.0.1", 11111), "example", "", "");
+        CanalConnector connector = CanalConnectors.newSingleConnector(
+                //127.0.0.1
+                new InetSocketAddress("127.0.0.1", 11111),
+                "example", "", "");
         try {
             //打开连接
             connector.connect();
             //订阅数据库表,全部表
             connector.subscribe(".*\\..*");
+            //connector.subscribe("datacenter.baichuan_worktask,datacenter.weather_warning");
+
             //回滚到未进行ack的地方，下次fetch的时候，可以从最后一个没有ack的地方开始拿
             connector.rollback();
             while (true) {

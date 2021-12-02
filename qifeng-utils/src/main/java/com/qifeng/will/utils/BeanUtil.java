@@ -1,4 +1,4 @@
-package com.hanxiaozhang.utils;
+package com.qifeng.will.utils;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.BeanWrapper;

@@ -1,6 +1,6 @@
-package com.hanxiaozhang.basicknowledgecode;
+package com.qifeng.will.basicknowledgecode;
 
-import com.hanxiaozhang.basicknowledgecode.commomentity.Student;
+import com.qifeng.will.basicknowledgecode.commomentity.Student;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

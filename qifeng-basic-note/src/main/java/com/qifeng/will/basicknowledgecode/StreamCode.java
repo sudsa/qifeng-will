@@ -1,9 +1,10 @@
-package com.hanxiaozhang.basicknowledgecode;
+package com.qifeng.will.basicknowledgecode;
 
 
 
-import com.hanxiaozhang.basicknowledgecode.commomentity.StudentDO;
-import com.hanxiaozhang.basicknowledgecode.commomentity.StudentVO;
+
+import com.qifeng.will.basicknowledgecode.commomentity.StudentDO;
+import com.qifeng.will.basicknowledgecode.commomentity.StudentVO;
 
 import java.util.*;
 import java.util.stream.Collectors;

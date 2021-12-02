@@ -1,4 +1,6 @@
-package com.hanxiaozhang.basicknowledgecode;
+package com.qifeng.will.basicknowledgecode;
+
+import com.qifeng.will.basicknowledgecode.StmDevp;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -10,7 +12,7 @@ public class KJavarelfect {
     public static void test(){
         Class clazz = null;
         try {
-            clazz = Class.forName("com.hanxiaozhang.basicknowledgecode.StmDevp");
+            clazz = Class.forName("com.qifeng.will.basicknowledgecode.StmDevp");
             Constructor constructor = clazz.getConstructor(String.class, int.class);
             constructor.setAccessible(true);
             StmDevp sp = (StmDevp) constructor.newInstance("9981", 21);

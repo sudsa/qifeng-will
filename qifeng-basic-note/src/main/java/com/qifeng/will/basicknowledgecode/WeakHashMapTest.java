@@ -1,4 +1,4 @@
-package com.hanxiaozhang.basicknowledgecode;
+package com.qifeng.will.basicknowledgecode;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,11 +1,11 @@
-package com.hanxiaozhang.common.dao;
+package com.qifeng.will.common.dao;
 
-import com.hanxiaozhang.common.domain.FileDO;
 
 import java.util.List;
 import java.util.Map;
 
-import com.hanxiaozhang.common.dto.FileDTO;
+import com.qifeng.will.common.domain.FileDO;
+import com.qifeng.will.common.dto.FileDTO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -13,8 +13,8 @@ import org.apache.ibatis.annotations.Update;
 
 /**
  * 文件表
- * @author hanxinghua
- * @email hanxinghua2015@sina.com
+ * @author howill
+ * @email howill@sina.com
  * @date 2020-04-30 09:43:57
  */
 @Mapper

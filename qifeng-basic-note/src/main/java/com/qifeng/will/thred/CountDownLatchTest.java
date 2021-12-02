@@ -1,4 +1,4 @@
-package com.hanxiaozhang.thred;
+package com.qifeng.will.thred;
 
 public class CountDownLatchTest {
 

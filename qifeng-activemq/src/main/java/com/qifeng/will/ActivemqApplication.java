@@ -1,13 +1,13 @@
-package com.hanxiaozhang;
+package com.qifeng.will;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringbootActivemqApplication {
+public class ActivemqApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringbootActivemqApplication.class, args);
+        SpringApplication.run(ActivemqApplication.class, args);
         System.out.println("   ヾ(◍°∇°◍)ﾉﾞ        START UP SUCCESS       ヾ(◍°∇°◍)ﾉﾞ   \n" +
                 "        __________________      _     _            \n" +
                 "       /  |    _     _    |    | |   | | _____    __    _       \n" +

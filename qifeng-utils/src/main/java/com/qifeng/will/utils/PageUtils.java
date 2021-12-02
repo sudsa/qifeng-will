@@ -1,4 +1,4 @@
-package com.hanxiaozhang.utils;
+package com.qifeng.will.utils;
 
 import java.io.Serializable;
 import java.util.List;

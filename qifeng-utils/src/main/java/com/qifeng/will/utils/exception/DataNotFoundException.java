@@ -1,6 +1,7 @@
-package com.hanxiaozhang.utils.exception;
+package com.qifeng.will.utils.exception;
 
 
+import com.qifeng.will.utils.exception.BusinessException;
 
 /**
  * 〈一句话功能简述〉<br>

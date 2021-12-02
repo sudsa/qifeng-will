@@ -1,4 +1,4 @@
-package com.hanxiaozhang.thred;
+package com.qifeng.will.thred;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;

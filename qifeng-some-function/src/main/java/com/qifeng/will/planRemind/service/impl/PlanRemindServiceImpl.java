@@ -1,5 +1,8 @@
-package com.hanxiaozhang.planRemind.service.impl;
+package com.qifeng.will.planRemind.service.impl;
 
+import com.qifeng.will.planRemind.dao.PlanRemindDao;
+import com.qifeng.will.planRemind.domain.PlanRemindDO;
+import com.qifeng.will.planRemind.service.PlanRemindService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,9 +16,6 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
-import com.hanxiaozhang.planRemind.dao.PlanRemindDao;
-import com.hanxiaozhang.planRemind.domain.PlanRemindDO;
-import com.hanxiaozhang.planRemind.service.PlanRemindService;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;

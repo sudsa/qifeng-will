@@ -22,7 +22,7 @@ public class CanalTest {
     public static void main(String[] args) {
         //1.创建连接
         CanalConnector connect = CanalConnectors.newSingleConnector(
-                new InetSocketAddress("127.0.0.1", 11111),
+                new InetSocketAddress("172.17.46.193", 11111),
                 "example",
                 "",
                 ""

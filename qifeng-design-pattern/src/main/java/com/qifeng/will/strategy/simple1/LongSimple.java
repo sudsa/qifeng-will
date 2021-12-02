@@ -1,12 +1,13 @@
-package com.hanxiaozhang.strategy.simple1;
+package com.qifeng.will.strategy.simple1;
 
 import org.springframework.stereotype.Service;
+import com.qifeng.will.strategy.simple1.SimpleStrategy;
 
 /**
  * 〈一句话功能简述〉<br>
  * 〈策略模式实现2〉
  *
- * @author hanxinghua
+ * @author howill.zou
  * @create 2020/5/11
  * @since 1.0.0
  */

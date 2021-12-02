@@ -1,4 +1,4 @@
-package com.hanxiaozhang.configway.original;
+package com.qifeng.will.configway.original;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 

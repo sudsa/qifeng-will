@@ -1,4 +1,4 @@
-package com.hanxiaozhang.utils.exception;
+package com.qifeng.will.utils.exception;
 
 
 /**

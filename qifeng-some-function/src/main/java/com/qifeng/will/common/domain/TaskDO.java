@@ -1,4 +1,4 @@
-package com.hanxiaozhang.common.domain;
+package com.qifeng.will.common.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

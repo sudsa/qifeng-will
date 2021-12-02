@@ -1,4 +1,4 @@
-package com.hanxiaozhang.strategy.simple2;
+package com.qifeng.will.strategy.simple2;
 
 /**
  * 〈一句话功能简述〉<br>

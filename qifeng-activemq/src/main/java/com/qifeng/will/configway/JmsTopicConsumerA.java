@@ -1,4 +1,4 @@
-package com.hanxiaozhang.configway;
+package com.qifeng.will.configway;
 
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;

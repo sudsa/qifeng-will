@@ -1,4 +1,6 @@
-package com.hanxiaozhang.sourcecode.list.arraylist;
+package com.qifeng.will.sourcecode.list.arraylist;
+
+import com.qifeng.will.sourcecode.list.arraylist.MyArrayList;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.hanxiaozhang.sourcecode.list.linkedlist;
+package com.qifeng.will.sourcecode.list.linkedlist;
 
 import java.util.List;
 

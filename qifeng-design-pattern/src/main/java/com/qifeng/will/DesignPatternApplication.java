@@ -1,13 +1,13 @@
-package com.hanxiaozhang;
+package com.qifeng.will;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringbootDesignPatternApplication {
+public class DesignPatternApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringbootDesignPatternApplication.class, args);
+        SpringApplication.run(DesignPatternApplication.class, args);
         System.out.println("   ヾ(◍°∇°◍)ﾉﾞ        START UP SUCCESS       ヾ(◍°∇°◍)ﾉﾞ   \n" +
                 "        __________________      _     _            \n" +
                 "       /  |    _     _    |    | |   | | _____    __    _       \n" +

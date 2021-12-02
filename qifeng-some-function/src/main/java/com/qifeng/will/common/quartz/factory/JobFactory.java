@@ -1,4 +1,4 @@
-package com.hanxiaozhang.common.quartz.factory;
+package com.qifeng.will.common.quartz.factory;
 
 import org.quartz.spi.TriggerFiredBundle;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * 功能描述: <br>
  * 〈〉
  *
- * @Author:hanxinghua
+ * @Author:howill
  * @Date: 2020/9/9
  */
 @Component

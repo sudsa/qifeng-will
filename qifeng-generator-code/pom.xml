@@ -3,16 +3,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <parent>
-        <groupId>com.hanxiaozhang</groupId>
-        <artifactId>springboot-parent</artifactId>
+        <groupId>com.qifeng.will</groupId>
+        <artifactId>qifeng-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <!--maven特点之一：继承,类似java中的继承-->
-        <relativePath>../springboot-parent/pom.xml</relativePath>
+        <relativePath>../qifeng-parent/pom.xml</relativePath>
     </parent>
 
 
-    <artifactId>springboot-generator-code</artifactId>
-    <name>springboot-generator-code</name>
+    <artifactId>qifeng-generator-code</artifactId>
+    <name>qifeng-generator-code</name>
     <modelVersion>4.0.0</modelVersion>
     <packaging>jar</packaging>
 
@@ -27,8 +27,9 @@
 
 
         <dependency>
-            <groupId>com.hanxiaozhang</groupId>
-            <artifactId>springboot-utils</artifactId>
+            <groupId>com.qifeng.will</groupId>
+            <artifactId>qifeng-utils</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <!--velocity代码生成使用模板 -->

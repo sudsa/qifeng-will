@@ -1,4 +1,4 @@
-package com.hanxiaozhang.strategy.simple1;
+package com.qifeng.will.strategy.simple1;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

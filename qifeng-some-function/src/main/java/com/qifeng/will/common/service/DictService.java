@@ -1,8 +1,9 @@
-package com.hanxiaozhang.common.service;
+package com.qifeng.will.common.service;
 
 
 
-import com.hanxiaozhang.common.domain.DictDO;
+
+import com.qifeng.will.common.domain.DictDO;
 
 import java.util.List;
 import java.util.Map;
@@ -11,8 +12,8 @@ import java.util.Map;
 /**
  * 字典表
  *
- * @author hanxinghua
- * @email hanxinghua2015@sina.com
+ * @author howill.zou
+ * @email howill.zou@sina.com
  * @date 2020-04-30 09:43:57
  */
 public interface DictService {

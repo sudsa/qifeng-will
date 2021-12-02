@@ -18,20 +18,21 @@
 	<!--父模块打包类型必须为pom-->
 	<packaging>pom</packaging>
 	<!-- 项目主页的URL-->
-	<url> http://maven.hanxiaozhang.xyz </url>
+	<!--<url> http://maven.hanxiaozhang.xyz </url>-->
 
 	<!--父项目的坐标-->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.0.RELEASE</version>
+		<version>2.0.3.RELEASE</version>
+		<!--<version>2.1.0.RELEASE</version>-->
 		<relativePath/><!-- lookup parent from repository -->
 	</parent>
 
 	<!--配置聚合模块-->
 	<!--maven特点之一：聚合,聚合多个子模块-->
 	<!--聚合是将多个模块组装在一起,相互协调依赖运行-->
-	<modules>
+	<!--<modules>
 		<module>../qifeng-utils</module>
 		<module>../qifeng-common</module>
 		<module>../qifeng-httpclient</module>
@@ -44,7 +45,7 @@
 		<module>../qifeng-spring-knowledge</module>
 		<module>../qifeng-some-function</module>
 		<module>../qifeng-design-pattern</module>
-		<module>../qifeng-java-basic-note</module>
+		<module>../qifeng-basic-note</module>
 		<module>../qifeng-generator-code</module>
 		<module>../qifeng-mongodb</module>
 		<module>../qifeng-netty</module>
@@ -59,7 +60,7 @@
 		<module>../qifeng-arcSoftFace</module>
 		<module>../qifeng-proxy</module>
 		<module>../qifeng-userserver</module>
-	</modules>
+	</modules>-->
 
 
 	<!--配置变量属性-->
@@ -123,7 +124,6 @@
 			<artifactId>spring-cloud-dependencies</artifactId>
 			<version>${version.spring-cloud}</version>
 			<type>pom</type>
-			<scope>import</scope>
 		</dependency>
 
 		<!-- react 反应器-->
@@ -181,11 +181,11 @@
 			<artifactId>spring-boot-starter-cache</artifactId>
 		</dependency>
 		<!--lombok-->
-		<dependency>
+		<!--<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<scope>provided</scope>
-		</dependency>
+		</dependency>-->
 
 		<!-- fastjson -->
 		<dependency>

@@ -1,4 +1,4 @@
-package com.hanxiaozhang.strategy.simple2;
+package com.qifeng.will.strategy.simple2;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.ResourceProperties;

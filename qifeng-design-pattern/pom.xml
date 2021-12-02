@@ -3,16 +3,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <parent>
-        <groupId>com.hanxiaozhang</groupId>
-        <artifactId>springboot-parent</artifactId>
+        <groupId>com.qifeng.will</groupId>
+        <artifactId>qifeng-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <!--maven特点之一：继承,类似java中的继承-->
-        <relativePath>../springboot-parent/pom.xml</relativePath>
+        <relativePath>../qifeng-parent/pom.xml</relativePath>
     </parent>
 
 
-    <artifactId>springboot-design-pattern</artifactId>
-    <name>springboot-design-pattern</name>
+    <artifactId>qifeng-design-pattern</artifactId>
+    <name>qifeng-design-pattern</name>
     <modelVersion>4.0.0</modelVersion>
     <packaging>jar</packaging>
 

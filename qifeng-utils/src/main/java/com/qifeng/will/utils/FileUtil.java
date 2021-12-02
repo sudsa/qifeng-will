@@ -1,4 +1,4 @@
-package com.hanxiaozhang.utils;
+package com.qifeng.will.utils;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -14,7 +14,7 @@ import java.util.zip.ZipOutputStream;
  * 功能描述: <br>
  * 〈文件工具类〉
  *
- * @Author:hanxinghua
+ * @Author:howill.zou
  * @Date: 2020/2/16
  */
 @Slf4j

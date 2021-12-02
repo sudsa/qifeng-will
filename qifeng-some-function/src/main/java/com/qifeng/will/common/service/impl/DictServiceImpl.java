@@ -1,9 +1,9 @@
-package com.hanxiaozhang.common.service.impl;
+package com.qifeng.will.common.service.impl;
 
 
-import com.hanxiaozhang.common.dao.DictDao;
-import com.hanxiaozhang.common.domain.DictDO;
-import com.hanxiaozhang.common.service.DictService;
+import com.qifeng.will.common.dao.DictDao;
+import com.qifeng.will.common.domain.DictDO;
+import com.qifeng.will.common.service.DictService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

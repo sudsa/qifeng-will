@@ -1,10 +1,12 @@
-package com.hanxiaozhang.common.service.impl;
+package com.qifeng.will.common.service.impl;
 
-import com.hanxiaozhang.common.dao.DictDao;
-import com.hanxiaozhang.common.domain.DictDO;
-import com.hanxiaozhang.common.dto.FileDTO;
-import com.hanxiaozhang.common.util.ZipDownloadUtil;
-import com.hanxiaozhang.utils.StringUtil;
+import com.qifeng.will.common.dao.DictDao;
+import com.qifeng.will.common.dao.FileDao;
+import com.qifeng.will.common.domain.DictDO;
+import com.qifeng.will.common.dto.FileDTO;
+import com.qifeng.will.common.service.FileService;
+import com.qifeng.will.common.util.ZipDownloadUtil;
+import com.qifeng.will.utils.StringUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.stereotype.Service;
@@ -15,8 +17,6 @@ import java.time.LocalTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import com.hanxiaozhang.common.dao.FileDao;
-import com.hanxiaozhang.common.service.FileService;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;

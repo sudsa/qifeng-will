@@ -1,4 +1,4 @@
-package com.hanxiaozhang.configway;
+package com.qifeng.will.configway;
 
 
 import lombok.extern.slf4j.Slf4j;

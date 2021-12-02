@@ -1,5 +1,6 @@
-package com.hanxiaozhang.strategy;
+package com.qifeng.will.strategy;
 
+import com.qifeng.will.strategy.FileTypeResolveEnum;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;

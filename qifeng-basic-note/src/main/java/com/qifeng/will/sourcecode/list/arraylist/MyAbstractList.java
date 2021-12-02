@@ -1,4 +1,4 @@
-package com.hanxiaozhang.sourcecode.list.arraylist;
+package com.qifeng.will.sourcecode.list.arraylist;
 
 import java.util.*;
 

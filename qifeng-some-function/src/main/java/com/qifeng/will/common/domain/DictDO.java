@@ -1,4 +1,4 @@
-package com.hanxiaozhang.common.domain;
+package com.qifeng.will.common.domain;
 
 import com.hanxiaozhang.common.validation.CreateGroupValidation;
 import com.hanxiaozhang.common.validation.UpdateGroupValidation;
@@ -19,8 +19,8 @@ import java.util.Date;
 /**
  * 字典表
  *
- * @author hanxinghua
- * @email hanxinghua2015@sina.com
+ * @author howill
+ * @email howill@sina.com
  * @date 2020-04-30 09:43:57
  */
 @Data

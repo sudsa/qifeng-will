@@ -1,4 +1,4 @@
-package com.hanxiaozhang.dao;
+package com.qifeng.will.dao;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -10,7 +10,7 @@ import java.util.Map;
  * 功能描述: <br>
  * 〈GeneratorMapper〉
  *
- * @Author:hanxinghua
+ * @Author:howill.zou
  * @Date: 2020/6/19
  */
 @Mapper

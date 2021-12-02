@@ -1,4 +1,4 @@
-package com.hanxiaozhang.es.aop;
+package com.qifeng.will.es.aop;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -6,11 +6,7 @@ import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-import org.springframework.web.context.request.RequestAttributes;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 
-import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Method;
 
 ;
@@ -30,7 +26,7 @@ public class OperateEsLogAspect {
     //@Autowired
     //private OperateLogService operateLogService;
 
-    @Pointcut("@annotation(com.hanxiaozhang.es.aop.OperateEsLog)")
+    @Pointcut("@annotation(com.qifeng.will.es.aop.OperateEsLog)")
     public void esAspect() {
         logger.info("==========================正在执行切入点===========================");
     }

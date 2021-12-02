@@ -1,4 +1,4 @@
-package com.hanxiaozhang.controller;
+package com.qifeng.will.controller;
 
 import com.alibaba.fastjson.JSON;
 
@@ -26,7 +26,7 @@ import java.util.Map;
  * 功能描述: <br>
  * 〈GeneratorController〉
  *
- * @Author:hanxinghua
+ * @Author:howill.zou
  * @Date: 2020/6/19
  */
 @RequestMapping("/generator")

@@ -1,9 +1,9 @@
-package com.hanxiaozhang.service.impl;
+package com.qifeng.will.service.impl;
 
 
-import com.hanxiaozhang.dao.GeneratorMapper;
-import com.hanxiaozhang.service.GeneratorService;
-import com.hanxiaozhang.util.GenUtils;
+import com.qifeng.will.dao.GeneratorMapper;
+import com.qifeng.will.service.GeneratorService;
+import com.qifeng.will.util.GenUtils;
 import org.apache.commons.io.IOUtils;
 
 import org.springframework.stereotype.Service;
@@ -18,7 +18,7 @@ import java.util.zip.ZipOutputStream;
  * 功能描述: <br>
  * 〈GeneratorServiceImpl〉
  *
- * @Author:hanxinghua
+ * @Author:howill.zou
  * @Date: 2020/6/19
  */
 @Service

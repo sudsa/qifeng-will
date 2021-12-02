@@ -1,4 +1,4 @@
-package com.hanxiaozhang.basicknowledgecode.commomentity;
+package com.qifeng.will.basicknowledgecode.commomentity;
 
 public class StudentVO extends StudentDO  implements Comparable<StudentVO>{
 

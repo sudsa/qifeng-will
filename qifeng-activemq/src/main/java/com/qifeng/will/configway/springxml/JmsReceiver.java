@@ -1,4 +1,4 @@
-package com.hanxiaozhang.configway.springxml;
+package com.qifeng.will.configway.springxml;
 
 
 

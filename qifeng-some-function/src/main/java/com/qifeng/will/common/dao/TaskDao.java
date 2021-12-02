@@ -1,10 +1,9 @@
-package com.hanxiaozhang.common.dao;
-
-import com.hanxiaozhang.common.domain.TaskDO;
+package com.qifeng.will.common.dao;
 
 import java.util.List;
 import java.util.Map;
 
+import com.qifeng.will.common.domain.TaskDO;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

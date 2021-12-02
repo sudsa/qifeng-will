@@ -1,4 +1,4 @@
-package com.hanxiaozhang.basicknowledgecode.commomentity;
+package com.qifeng.will.basicknowledgecode.commomentity;
 
 import java.util.ArrayList;
 import java.util.List;

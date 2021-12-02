@@ -1,4 +1,4 @@
-package com.hanxiaozhang.strategy;
+package com.qifeng.will.strategy;
 
 public enum FileTypeResolveEnum {
 

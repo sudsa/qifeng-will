@@ -1,4 +1,4 @@
-package com.hanxiaozhang.sourcecode.list.arraylist;
+package com.qifeng.will.sourcecode.list.arraylist;
 
 
 import java.util.*;
@@ -124,7 +124,7 @@ import java.util.function.UnaryOperator;
  *  1h
  *
  *
- * @author hanxinghua
+ * @author howill.zou
  * @create 2020/5/2
  * @since 1.0.0
  */

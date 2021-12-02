@@ -1,4 +1,4 @@
-package com.hanxiaozhang.common.util;
+package com.qifeng.will.common.util;
 
 
 import lombok.extern.slf4j.Slf4j;
