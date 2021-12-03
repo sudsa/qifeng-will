@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <groupId>com.qifeng.will</groupId>
+        <artifactId>qifeng-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <!--maven特点之一：继承,类似java中的继承-->
+        <relativePath>../qifeng-parent/pom.xml</relativePath>
+    </parent>
+
+    <artifactId>qifeng-web</artifactId>
+    <name>qifeng-web</name>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>jar</packaging>
+
+    <description>qifeng web for Spring Boot</description>
+	
+    <properties>
+		<version.doc.framework.shiro>1.0.0</version.doc.framework.shiro>
+	</properties>
+
+	<dependencies>
+		<!-- json -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
+
+		<!-- mybatis -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.github.miemiedev</groupId>
+			<artifactId>mybatis-paginator</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+		</dependency>
+
+    <!-- doc组件 -->
+		<!-- shiro -->
+        <!--<dependency>
+            <groupId>com.bpaas</groupId>
+            <artifactId>com.bpaas.doc.framework.shiro</artifactId>
+            <version>${version.doc.framework.shiro}</version>
+        </dependency>-->
+
+		<!-- spring组件 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.qifeng.will</groupId>
+			<artifactId>qifeng-base</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+					<id>attach-sources</id>
+					<goals>
+						<goal>jar</goal>
+					</goals>
+				</execution>
+			</executions>
+			</plugin>
+        </plugins>
+    </build>
+
+
+</project>
